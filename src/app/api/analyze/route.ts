@@ -60,66 +60,55 @@ export async function POST(req: NextRequest) {
     requests.push(Date.now());
     rateLimit.set(ip, requests);
 
-    let ytdl;
-    try {
-      ytdl = (await import("@distube/ytdl-core")).default;
-    } catch {
+    const rapidKey = process.env.RAPIDAPI_KEY;
+    if (!rapidKey) {
       return NextResponse.json(
-        { error: "This platform is temporarily unsupported. Please try again later." },
+        { error: "RapidAPI key not configured" },
         { status: 500 }
       );
     }
 
-    try {
-      const info = await ytdl.getInfo(url);
-      const formats = info.formats
-        .filter((f: any) => {
-          const mime = f.mimeType || "";
-          return mime.includes("video/mp4") || mime.includes("video/webm") || mime.includes("audio/mp4") || mime.includes("audio/webm");
-        })
-        .map((f: any) => ({
-          formatId: f.itag?.toString() || f.formatId,
-          quality: f.qualityLabel || (f.audioBitrate ? `${f.audioBitrate}kbps` : "audio only"),
-          mimeType: f.mimeType?.split(";")[0] || "video/mp4",
-          hasAudio: !!f.audioBitrate || f.hasAudio,
-          fileSizeApprox: f.contentLength ? `${(parseInt(f.contentLength) / 1024 / 1024).toFixed(1)}MB` : "~Unknown",
-        }));
-
-      const qualityMap = new Map<string, any>();
-      for (const f of formats) {
-        const key = f.quality;
-        const existing = qualityMap.get(key);
-        if (!existing || (f.fileSizeApprox > existing.fileSizeApprox)) {
-          qualityMap.set(key, f);
-        }
+    const response = await fetch(
+      "https://youtube-mp3-audio-video-downloader.p.rapidapi.com/get_direct_url",
+      {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-RapidAPI-Key": rapidKey,
+          "X-RapidAPI-Host": "youtube-mp3-audio-video-downloader.p.rapidapi.com",
+        },
+        body: JSON.stringify({ url }),
       }
+    );
 
-      const uniqueFormats = Array.from(qualityMap.values()).slice(0, 6);
-
-      return NextResponse.json({
-        platform,
-        title: info.videoDetails?.title || "Unknown",
-        author: info.videoDetails?.author?.name || info.videoDetails?.ownerChannelName || "Unknown",
-        duration: info.videoDetails?.lengthSeconds
-          ? `${Math.floor(parseInt(info.videoDetails.lengthSeconds) / 60)}:${(parseInt(info.videoDetails.lengthSeconds) % 60).toString().padStart(2, "0")}`
-          : "Unknown",
-        thumbnail: info.videoDetails?.thumbnails?.[0]?.url || "",
-        originalUrl: url,
-        formats: uniqueFormats,
-      });
-    } catch (err: any) {
-      if (err.statusCode === 403) {
-        return NextResponse.json({ error: "This video is private, age-restricted, or region-blocked." }, { status: 403 });
-      }
-      if (err.statusCode === 404) {
-        return NextResponse.json({ error: "Video not found. It may have been deleted." }, { status: 404 });
-      }
+    if (!response.ok) {
       return NextResponse.json(
-        { error: "This platform is temporarily unsupported. Please try again later." },
-        { status: 500 }
+        { error: "External API error. Please try again later." },
+        { status: 502 }
       );
     }
+
+    const data = await response.json();
+
+    const formats = [
+      { formatId: "18", quality: "360p", mimeType: "video/mp4", hasAudio: true, fileSizeApprox: "~Unknown" },
+      { formatId: "22", quality: "720p", mimeType: "video/mp4", hasAudio: true, fileSizeApprox: "~Unknown" },
+      { formatId: "137", quality: "1080p HD", mimeType: "video/mp4", hasAudio: true, fileSizeApprox: "~Unknown" },
+    ];
+
+    return NextResponse.json({
+      platform,
+      title: data.title || "Unknown",
+      author: data.author || "Unknown",
+      duration: data.duration || "Unknown",
+      thumbnail: data.thumbnail || "",
+      originalUrl: url,
+      formats,
+    });
   } catch {
-    return NextResponse.json({ error: "Server error. Please try again later." }, { status: 500 });
+    return NextResponse.json(
+      { error: "Server error. Please try again later." },
+      { status: 500 }
+    );
   }
 }
