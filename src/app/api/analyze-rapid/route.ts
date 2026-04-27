@@ -60,12 +60,12 @@ export async function POST(req: NextRequest) {
     );
 
     if (!response.ok) {
-      const errorText = await response.text();
-      return NextResponse.json(
-        { error: `API Error ${response.status}: ${errorText}` },
-        { status: 502 }
-      );
-    }
+  const errorText = await response.text();
+  return NextResponse.json(
+    { error: `RapidAPI Error ${response.status}: ${errorText}` },
+    { status: 502 }
+  );
+}
 
     const data = await response.json();
 
