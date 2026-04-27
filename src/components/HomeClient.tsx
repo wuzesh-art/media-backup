@@ -31,6 +31,11 @@ interface StreamData {
   platform: string;
 }
 
+interface ApiError {
+  error?: string;
+  message?: string;
+}
+
 export function HomeClient() {
   const [url, setUrl] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -55,7 +60,9 @@ export function HomeClient() {
     try {
       const stored = localStorage.getItem("recent_backups");
       if (stored) setRecentBackups(JSON.parse(stored));
-    } catch {}
+    } catch {
+      // ignore parse errors
+    }
   }, []);
 
   const saveToRecent = (data: VideoData, format: string) => {
@@ -72,7 +79,9 @@ export function HomeClient() {
       const updated = [item, ...existing].slice(0, 5);
       localStorage.setItem("recent_backups", JSON.stringify(updated));
       setRecentBackups(updated);
-    } catch {}
+    } catch {
+      // ignore
+    }
   };
 
   const handleAnalyze = async () => {
@@ -98,32 +107,34 @@ export function HomeClient() {
 
     setIsAnalyzing(true);
 
-    const tryAnalyze = async (endpoint: string) => {
+    const tryAnalyze = async (endpoint: string): Promise<VideoData> => {
       const res = await fetch(endpoint, {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
       });
-      const data = await res.json();
+      const data = (await res.json()) as VideoData & ApiError;
       if (!res.ok) throw new Error(data.error || "Analysis failed");
       return data;
     };
 
     try {
-      let data;
+      let data: VideoData;
       try {
         data = await tryAnalyze("/api/analyze");
-      } catch (primaryErr: any) {
+      } catch (primaryErr: unknown) {
+        const errMsg = primaryErr instanceof Error ? primaryErr.message : String(primaryErr);
         try {
           data = await tryAnalyze("/api/analyze-rapid");
         } catch {
-          throw primaryErr;
+          throw new Error(errMsg);
         }
       }
       setVideoData(data);
       setIsSelectorOpen(true);
-    } catch (err: any) {
-      setError(err.message || "Failed to analyze video. The platform may be temporarily unavailable.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Failed to analyze video. The platform may be temporarily unavailable.";
+      setError(message);
     } finally {
       setIsAnalyzing(false);
     }
@@ -161,7 +172,7 @@ export function HomeClient() {
         }),
       });
 
-      const data = await res.json();
+      const data = (await res.json()) as StreamData & { success?: boolean; error?: string };
       if (!res.ok || !data.success) {
         throw new Error(data.error || "Failed to get download link");
       }
@@ -174,8 +185,9 @@ export function HomeClient() {
       saveToRecent(videoData, selectedQuality);
 
       await new Promise((r) => setTimeout(r, 300));
-    } catch (err: any) {
-      setError(err.message || "Download failed. Please try again.");
+    } catch (err: unknown) {
+      const message = err instanceof Error ? err.message : "Download failed. Please try again.";
+      setError(message);
       setIsDownloading(false);
       return;
     }
