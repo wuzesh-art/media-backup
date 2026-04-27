@@ -31,29 +31,6 @@ interface StreamData {
   platform: string;
 }
 
-// 模拟视频数据（调试用）
-const MOCK_VIDEO_DATA: VideoData = {
-  platform: "youtube",
-  title: "Rick Astley - Never Gonna Give You Up (Official Video)",
-  author: "Rick Astley",
-  duration: "3:33",
-  thumbnail: "https://i.ytimg.com/vi/dQw4w9WgXcQ/hqdefault.jpg",
-  originalUrl: "https://www.youtube.com/watch?v=dQw4w9WgXcQ",
-  formats: [
-    { formatId: "137", quality: "1080p HD", mimeType: "video/mp4", hasAudio: true, fileSizeApprox: "~45MB" },
-    { formatId: "22", quality: "720p", mimeType: "video/mp4", hasAudio: true, fileSizeApprox: "~25MB" },
-    { formatId: "18", quality: "360p", mimeType: "video/mp4", hasAudio: true, fileSizeApprox: "~12MB" },
-    { formatId: "audio-256", quality: "256kbps", mimeType: "audio/mp3", hasAudio: true, fileSizeApprox: "~8MB" },
-  ],
-};
-
-const MOCK_STREAM_DATA: StreamData = {
-  directUrl: "https://www.w3schools.com/html/mov_bbb.mp4",
-  filename: "Rick_Astley_Never_Gonna_Give_You_Up.mp4",
-  contentType: "video/mp4",
-  platform: "youtube",
-};
-
 export function HomeClient() {
   const [url, setUrl] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -121,16 +98,6 @@ export function HomeClient() {
 
     setIsAnalyzing(true);
 
-    // 调试模式：模拟 API 延迟，然后显示模拟数据
-    await new Promise((r) => setTimeout(r, 1500));
-
-    // 使用模拟数据
-    setVideoData(MOCK_VIDEO_DATA);
-    setIsSelectorOpen(true);
-    setIsAnalyzing(false);
-
-    // 生产环境注释：实际部署时替换为真实 API 调用
-    /*
     const tryAnalyze = async (endpoint: string) => {
       const res = await fetch(endpoint, {
         method: "POST",
@@ -156,11 +123,10 @@ export function HomeClient() {
       setVideoData(data);
       setIsSelectorOpen(true);
     } catch (err: any) {
-      setError(err.message || "Failed to analyze video.");
+      setError(err.message || "Failed to analyze video. The platform may be temporarily unavailable.");
     } finally {
       setIsAnalyzing(false);
     }
-    */
   };
 
   const handleStartBackup = async () => {
@@ -184,15 +150,35 @@ export function HomeClient() {
       setDownloadStage(stage.stage);
     }
 
-    // 调试模式：使用模拟下载链接
-    setDownloadProgress(100);
-    setDownloadStage("Ready!");
-    setStreamData(MOCK_STREAM_DATA);
+    try {
+      const res = await fetch("/api/stream", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({
+          url: videoData.originalUrl,
+          formatId: selectedFormat,
+          type: selectedFormat.includes("audio") ? "audio" : "video"
+        }),
+      });
 
-    const selectedQuality = videoData.formats.find(f => f.formatId === selectedFormat)?.quality || selectedFormat;
-    saveToRecent(videoData, selectedQuality);
+      const data = await res.json();
+      if (!res.ok || !data.success) {
+        throw new Error(data.error || "Failed to get download link");
+      }
 
-    await new Promise((r) => setTimeout(r, 300));
+      setDownloadProgress(100);
+      setDownloadStage("Ready!");
+      setStreamData(data);
+
+      const selectedQuality = videoData.formats.find(f => f.formatId === selectedFormat)?.quality || selectedFormat;
+      saveToRecent(videoData, selectedQuality);
+
+      await new Promise((r) => setTimeout(r, 300));
+    } catch (err: any) {
+      setError(err.message || "Download failed. Please try again.");
+      setIsDownloading(false);
+      return;
+    }
   };
 
   const handleDownload = () => {
