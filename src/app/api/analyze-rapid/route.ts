@@ -46,22 +46,23 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const response = await fetch(
-      "https://youtube-video-and-audio-download.p.rapidapi.com/details",
+        const response = await fetch(
+      "https://youtube-mp3-audio-video-downloader.p.rapidapi.com/get_direct_url",
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "X-RapidAPI-Key": rapidKey,
-          "X-RapidAPI-Host": "youtube-video-and-audio-download.p.rapidapi.com",
+          "X-RapidAPI-Host": "youtube-mp3-audio-video-downloader.p.rapidapi.com",
         },
         body: JSON.stringify({ url }),
       }
     );
 
     if (!response.ok) {
+      const errorText = await response.text();
       return NextResponse.json(
-        { error: "External API error. Please try again later." },
+        { error: `API Error ${response.status}: ${errorText}` },
         { status: 502 }
       );
     }
