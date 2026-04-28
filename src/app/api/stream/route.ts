@@ -5,7 +5,7 @@ const BACKEND_URL = process.env.YTDLP_BACKEND_URL;
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
-    const { url, formatId, type } = body;
+    const { url, formatId } = body;
 
     if (!url || !formatId) {
       return NextResponse.json(
@@ -37,9 +37,10 @@ export async function POST(req: NextRequest) {
 
     const data = await response.json();
     return NextResponse.json(data);
-  } catch (err: any) {
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
     return NextResponse.json(
-      { success: false, error: `Server Crash: ${err.message || String(err)}` },
+      { success: false, error: `Server Crash: ${message}` },
       { status: 500 }
     );
   }
