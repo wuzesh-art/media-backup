@@ -1,5 +1,7 @@
 import { NextRequest, NextResponse } from "next/server";
 
+const BACKEND_URL = process.env.YTDLP_BACKEND_URL;
+
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
@@ -12,46 +14,32 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const rapidKey = process.env.RAPIDAPI_KEY;
-    if (!rapidKey) {
+    if (!BACKEND_URL) {
       return NextResponse.json(
-        { success: false, error: "RapidAPI key not configured" },
+        { success: false, error: "Backend not configured" },
         { status: 500 }
       );
     }
 
-    const response = await fetch(
-      "https://youtube-mp3-audio-video-downloader.p.rapidapi.com/get_direct_url",
-      {
-        method: "POST",
-        headers: {
-          "Content-Type": "application/json",
-          "X-RapidAPI-Key": rapidKey,
-          "X-RapidAPI-Host": "youtube-mp3-audio-video-downloader.p.rapidapi.com",
-        },
-        body: JSON.stringify({ url }),
-      }
-    );
+    const response = await fetch(`${BACKEND_URL}/download`, {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ url, formatId }),
+    });
 
     if (!response.ok) {
+      const errorText = await response.text();
       return NextResponse.json(
-        { success: false, error: "External API error" },
+        { success: false, error: `Backend Error ${response.status}: ${errorText}` },
         { status: 502 }
       );
     }
 
     const data = await response.json();
-
-    return NextResponse.json({
-      success: true,
-      directUrl: data.direct_url || data.url || url,
-      filename: `video_${Date.now()}.mp4`,
-      contentType: type === "audio" ? "audio/mpeg" : "video/mp4",
-      platform: "youtube",
-    });
-  } catch {
+    return NextResponse.json(data);
+  } catch (err: any) {
     return NextResponse.json(
-      { success: false, error: "Server error" },
+      { success: false, error: `Server Crash: ${err.message || String(err)}` },
       { status: 500 }
     );
   }
