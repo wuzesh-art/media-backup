@@ -37,9 +37,10 @@ export async function POST(req: NextRequest) {
 
     const data = await response.json();
     return NextResponse.json(data);
-  } catch (err: any) {
+  } catch (err) {
+    const message = err instanceof Error ? err.message : String(err);
     return NextResponse.json(
-      { error: `Server Crash: ${err.message || String(err)}` },
+      { error: `Server Crash: ${message}` },
       { status: 500 }
     );
   }
