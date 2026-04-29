@@ -193,21 +193,47 @@ export function HomeClient() {
     }
   };
 
-  const handleDownload = () => {
-    if (!streamData) return;
-    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
-    if (isIOS) {
-      window.open(streamData.directUrl, "_blank");
-    } else {
-      const a = document.createElement("a");
-      a.href = streamData.directUrl;
-      a.download = streamData.filename;
-      a.target = "_blank";
-      document.body.appendChild(a);
-      a.click();
-      document.body.removeChild(a);
+  const handleDownload = async () => {
+  if (!streamData) return;
+  
+  try {
+    const res = await fetch("/api/stream", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({
+        url: videoData?.originalUrl,
+        formatId: selectedFormat,
+      }),
+    });
+
+    if (!res.ok) {
+      const err = await res.json();
+      alert(err.error || "Download failed");
+      return;
     }
-  };
+
+    // 获取文件名
+    const disposition = res.headers.get("Content-Disposition");
+    let filename = "video.mp4";
+    if (disposition) {
+      const match = disposition.match(/filename="?([^"]+)"?/);
+      if (match) filename = match[1];
+    }
+
+    // 二进制流处理
+    const blob = await res.blob();
+    const url = window.URL.createObjectURL(blob);
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = filename;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+    window.URL.revokeObjectURL(url);
+  } catch (err: any) {
+    alert(err.message || "Download failed");
+  }
+};
 
   const handlePlay = () => {
     setIsPlayerOpen(true);
