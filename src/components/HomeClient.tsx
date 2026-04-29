@@ -31,11 +31,6 @@ interface StreamData {
   platform: string;
 }
 
-interface ApiError {
-  error?: string;
-  message?: string;
-}
-
 export function HomeClient() {
   const [url, setUrl] = useState("");
   const [isAnalyzing, setIsAnalyzing] = useState(false);
@@ -61,7 +56,7 @@ export function HomeClient() {
       const stored = localStorage.getItem("recent_backups");
       if (stored) setRecentBackups(JSON.parse(stored));
     } catch {
-      // ignore parse errors
+      // ignore
     }
   }, []);
 
@@ -107,33 +102,29 @@ export function HomeClient() {
 
     setIsAnalyzing(true);
 
-    const tryAnalyze = async (endpoint: string): Promise<VideoData> => {
-      const res = await fetch(endpoint, {
+    try {
+      const res = await fetch("/api/analyze", {
         method: "POST",
         headers: { "Content-Type": "application/json" },
         body: JSON.stringify({ url }),
       });
-      const data = (await res.json()) as VideoData & ApiError;
-      if (!res.ok) throw new Error(data.error || "Analysis failed");
-      return data;
-    };
 
-    try {
-      let data: VideoData;
-      try {
-        data = await tryAnalyze("/api/analyze");
-      } catch (primaryErr: unknown) {
-        const errMsg = primaryErr instanceof Error ? primaryErr.message : String(primaryErr);
-        try {
-          data = await tryAnalyze("/api/analyze-rapid");
-        } catch {
-          throw new Error(errMsg);
-        }
+      // 关键：先检查 Content-Type，如果是二进制则报错
+      const contentType = res.headers.get("Content-Type") || "";
+      if (contentType.includes("video") || contentType.includes("octet-stream")) {
+        throw new Error("Server returned a file instead of JSON. Please try again.");
       }
+
+      const data = await res.json();
+
+      if (!res.ok) {
+        throw new Error(data.error || "Analysis failed");
+      }
+
       setVideoData(data);
       setIsSelectorOpen(true);
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "Failed to analyze video. The platform may be temporarily unavailable.";
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Failed to analyze video";
       setError(message);
     } finally {
       setIsAnalyzing(false);
@@ -145,21 +136,7 @@ export function HomeClient() {
     setIsSelectorOpen(false);
     setIsDownloading(true);
     setDownloadProgress(0);
-    setDownloadStage("Analyzing source...");
-
-    const stages = [
-      { progress: 10, stage: "Analyzing source...", delay: 500 },
-      { progress: 40, stage: "Fetching download link...", delay: 800 },
-      { progress: 80, stage: "Preparing your file...", delay: 600 },
-    ];
-
-    let currentProgress = 0;
-    for (const stage of stages) {
-      await new Promise((r) => setTimeout(r, stage.delay));
-      currentProgress = stage.progress;
-      setDownloadProgress(currentProgress);
-      setDownloadStage(stage.stage);
-    }
+    setDownloadStage("Preparing download...");
 
     try {
       const res = await fetch("/api/stream", {
@@ -168,73 +145,72 @@ export function HomeClient() {
         body: JSON.stringify({
           url: videoData.originalUrl,
           formatId: selectedFormat,
-          type: selectedFormat.includes("audio") ? "audio" : "video"
         }),
       });
 
-      const data = (await res.json()) as StreamData & { success?: boolean; error?: string };
-      if (!res.ok || !data.success) {
-        throw new Error(data.error || "Failed to get download link");
+      const contentType = res.headers.get("Content-Type") || "";
+
+      // 如果返回的是 JSON（错误信息或直链）
+      if (contentType.includes("application/json")) {
+        const data = await res.json();
+        if (!res.ok || !data.success) {
+          throw new Error(data.error || "Download failed");
+        }
+        setStreamData(data);
+        setDownloadProgress(100);
+        setDownloadStage("Ready!");
+        const selectedQuality = videoData.formats.find(f => f.formatId === selectedFormat)?.quality || selectedFormat;
+        saveToRecent(videoData, selectedQuality);
+        return;
       }
 
-      setDownloadProgress(100);
-      setDownloadStage("Ready!");
-      setStreamData(data);
+      // 如果返回的是二进制文件流（MP4）
+      if (contentType.includes("video") || contentType.includes("octet-stream")) {
+        const blob = await res.blob();
+        const downloadUrl = window.URL.createObjectURL(blob);
+        const a = document.createElement("a");
+        a.href = downloadUrl;
+        const disposition = res.headers.get("Content-Disposition");
+        let filename = "video.mp4";
+        if (disposition) {
+          const match = disposition.match(/filename="?([^"]+)"?/);
+          if (match) filename = match[1];
+        }
+        a.download = filename;
+        document.body.appendChild(a);
+        a.click();
+        document.body.removeChild(a);
+        window.URL.revokeObjectURL(downloadUrl);
+        setDownloadProgress(100);
+        setDownloadStage("Downloaded!");
+        const selectedQuality = videoData.formats.find(f => f.formatId === selectedFormat)?.quality || selectedFormat;
+        saveToRecent(videoData, selectedQuality);
+        return;
+      }
 
-      const selectedQuality = videoData.formats.find(f => f.formatId === selectedFormat)?.quality || selectedFormat;
-      saveToRecent(videoData, selectedQuality);
-
-      await new Promise((r) => setTimeout(r, 300));
-    } catch (err: unknown) {
-      const message = err instanceof Error ? err.message : "Download failed. Please try again.";
+      throw new Error("Unknown response format from server");
+    } catch (err) {
+      const message = err instanceof Error ? err.message : "Download failed";
       setError(message);
       setIsDownloading(false);
-      return;
     }
   };
 
-  const handleDownload = async () => {
-  if (!streamData) return;
-  
-  try {
-    const res = await fetch("/api/stream", {
-      method: "POST",
-      headers: { "Content-Type": "application/json" },
-      body: JSON.stringify({
-        url: videoData?.originalUrl,
-        formatId: selectedFormat,
-      }),
-    });
-
-    if (!res.ok) {
-      const err = await res.json();
-      alert(err.error || "Download failed");
-      return;
+  const handleDownload = () => {
+    if (!streamData) return;
+    const isIOS = /iPad|iPhone|iPod/.test(navigator.userAgent) || (navigator.platform === "MacIntel" && navigator.maxTouchPoints > 1);
+    if (isIOS) {
+      window.open(streamData.directUrl, "_blank");
+    } else {
+      const a = document.createElement("a");
+      a.href = streamData.directUrl;
+      a.download = streamData.filename;
+      a.target = "_blank";
+      document.body.appendChild(a);
+      a.click();
+      document.body.removeChild(a);
     }
-
-    // 获取文件名
-    const disposition = res.headers.get("Content-Disposition");
-    let filename = "video.mp4";
-    if (disposition) {
-      const match = disposition.match(/filename="?([^"]+)"?/);
-      if (match) filename = match[1];
-    }
-
-    // 二进制流处理
-    const blob = await res.blob();
-    const url = window.URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = filename;
-    document.body.appendChild(a);
-    a.click();
-    document.body.removeChild(a);
-    window.URL.revokeObjectURL(url);
-} catch (err) {
-    const message = err instanceof Error ? err.message : "Download failed";
-    alert(message);
-}
-};
+  };
 
   const handlePlay = () => {
     setIsPlayerOpen(true);
