@@ -21,6 +21,7 @@ interface VideoData {
     mimeType: string;
     hasAudio: boolean;
     fileSizeApprox: string;
+    isProgressive?: boolean;
   }>;
 }
 
@@ -109,7 +110,6 @@ export function HomeClient() {
         body: JSON.stringify({ url }),
       });
 
-      // 关键：先检查 Content-Type，如果是二进制则报错
       const contentType = res.headers.get("Content-Type") || "";
       if (contentType.includes("video") || contentType.includes("octet-stream")) {
         throw new Error("Server returned a file instead of JSON. Please try again.");
@@ -150,7 +150,7 @@ export function HomeClient() {
 
       const contentType = res.headers.get("Content-Type") || "";
 
-      // 如果返回的是 JSON（错误信息或直链）
+      // 如果返回 JSON（错误信息或直链）
       if (contentType.includes("application/json")) {
         const data = await res.json();
         if (!res.ok || !data.success) {
@@ -164,7 +164,7 @@ export function HomeClient() {
         return;
       }
 
-      // 如果返回的是二进制文件流（MP4）
+      // 如果返回二进制文件流（MP4）
       if (contentType.includes("video") || contentType.includes("octet-stream")) {
         const blob = await res.blob();
         const downloadUrl = window.URL.createObjectURL(blob);
