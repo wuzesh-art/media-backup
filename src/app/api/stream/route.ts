@@ -27,7 +27,8 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({ url, formatId }),
     });
 
-    if (!response.ok) {
+    // 如果后端返回错误（JSON格式）
+    if (!response.ok && response.headers.get("Content-Type")?.includes("application/json")) {
       const errorText = await response.text();
       return NextResponse.json(
         { success: false, error: `Backend Error ${response.status}: ${errorText}` },
@@ -35,14 +36,23 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    // 透传文件流
+    // 如果后端返回的是文件流（video/mp4）
     const contentType = response.headers.get("Content-Type") || "video/mp4";
-    const contentDisposition = response.headers.get("Content-Disposition") || 'attachment; filename="video.mp4"';
-    
+    if (contentType.includes("video") || contentType.includes("octet-stream")) {
+      return new NextResponse(response.body, {
+        status: 200,
+        headers: {
+          "Content-Type": contentType,
+          "Content-Disposition": response.headers.get("Content-Disposition") || 'attachment; filename="video.mp4"',
+        },
+      });
+    }
+
+    // 兜底：透传任何响应
     return new NextResponse(response.body, {
+      status: response.status,
       headers: {
         "Content-Type": contentType,
-        "Content-Disposition": contentDisposition,
       },
     });
   } catch (err) {
