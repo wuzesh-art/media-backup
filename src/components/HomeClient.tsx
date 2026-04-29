@@ -230,9 +230,10 @@ export function HomeClient() {
     a.click();
     document.body.removeChild(a);
     window.URL.revokeObjectURL(url);
-  } catch (err: any) {
-    alert(err.message || "Download failed");
-  }
+} catch (err) {
+    const message = err instanceof Error ? err.message : "Download failed";
+    alert(message);
+}
 };
 
   const handlePlay = () => {
