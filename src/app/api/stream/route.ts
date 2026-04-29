@@ -27,17 +27,8 @@ export async function POST(req: NextRequest) {
       body: JSON.stringify({ url, formatId }),
     });
 
-    // 如果后端返回错误（JSON格式）
-    if (!response.ok && response.headers.get("Content-Type")?.includes("application/json")) {
-      const errorText = await response.text();
-      return NextResponse.json(
-        { success: false, error: `Backend Error ${response.status}: ${errorText}` },
-        { status: 502 }
-      );
-    }
+    const contentType = response.headers.get("Content-Type") || "";
 
-    // 如果后端返回的是文件流（video/mp4）
-    const contentType = response.headers.get("Content-Type") || "video/mp4";
     if (contentType.includes("video") || contentType.includes("octet-stream")) {
       return new NextResponse(response.body, {
         status: 200,
@@ -48,13 +39,8 @@ export async function POST(req: NextRequest) {
       });
     }
 
-    // 兜底：透传任何响应
-    return new NextResponse(response.body, {
-      status: response.status,
-      headers: {
-        "Content-Type": contentType,
-      },
-    });
+    const data = await response.json();
+    return NextResponse.json(data);
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     return NextResponse.json(
