@@ -35,8 +35,16 @@ export async function POST(req: NextRequest) {
       );
     }
 
-    const data = await response.json();
-    return NextResponse.json(data);
+    // 透传文件流
+    const contentType = response.headers.get("Content-Type") || "video/mp4";
+    const contentDisposition = response.headers.get("Content-Disposition") || 'attachment; filename="video.mp4"';
+    
+    return new NextResponse(response.body, {
+      headers: {
+        "Content-Type": contentType,
+        "Content-Disposition": contentDisposition,
+      },
+    });
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
     return NextResponse.json(
