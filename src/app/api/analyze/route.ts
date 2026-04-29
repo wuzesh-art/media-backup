@@ -8,17 +8,11 @@ export async function POST(req: NextRequest) {
     const { url } = body;
 
     if (!url || typeof url !== "string") {
-      return NextResponse.json(
-        { error: "Invalid URL format" },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: "Invalid URL format" }, { status: 400 });
     }
 
     if (!BACKEND_URL) {
-      return NextResponse.json(
-        { error: "Backend not configured" },
-        { status: 500 }
-      );
+      return NextResponse.json({ error: "Backend not configured" }, { status: 500 });
     }
 
     const response = await fetch(`${BACKEND_URL}/analyze`, {
@@ -39,9 +33,6 @@ export async function POST(req: NextRequest) {
     return NextResponse.json(data);
   } catch (err) {
     const message = err instanceof Error ? err.message : String(err);
-    return NextResponse.json(
-      { error: `Server Crash: ${message}` },
-      { status: 500 }
-    );
+    return NextResponse.json({ error: `Server Crash: ${message}` }, { status: 500 });
   }
 }
