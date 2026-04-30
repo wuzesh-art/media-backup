@@ -6,7 +6,7 @@ import { FormatSelector } from "./FormatSelector";
 import { DownloadManager } from "./DownloadManager";
 import { VideoPlayer } from "./VideoPlayer";
 import { RecentBackups } from "./RecentBackups";
-import { Loader2, AlertCircle, Mail } from "lucide-react";
+import { Loader2, AlertCircle } from "lucide-react";
 
 interface VideoData {
   platform: string;
@@ -51,8 +51,6 @@ export function HomeClient() {
     format: string;
     date: string;
   }>>([]);
-  const [email, setEmail] = useState("");
-  const [showEmailForm, setShowEmailForm] = useState(false);
 
   useEffect(() => {
     try {
@@ -86,7 +84,6 @@ export function HomeClient() {
     setError("");
     setVideoData(null);
     setStreamData(null);
-    setShowEmailForm(false);
 
     if (!url.trim()) {
       setError("Please enter a video URL.");
@@ -129,10 +126,9 @@ export function HomeClient() {
     } catch (err) {
       const message = err instanceof Error ? err.message : "Failed to analyze video";
 
-      // YouTube 反爬降级：显示优雅提示 + 收集邮箱
-      if (url.includes("youtube.com") || url.includes("youtu.be")) {
-        setShowEmailForm(true);
-        setError(`YouTube temporarily restricted due to anti-bot protection.\nTry TikTok, Instagram, Twitter, or Vimeo for instant download.\nOr leave your email to get notified when YouTube HD is restored.`);
+      // 非 TikTok 平台降级提示
+      if (url.includes("youtube.com") || url.includes("youtu.be") || url.includes("instagram.com") || url.includes("twitter.com") || url.includes("x.com") || url.includes("vimeo.com") || url.includes("facebook.com") || url.includes("fb.watch")) {
+        setError(`Currently, only TikTok download is fully supported.\nYouTube, Instagram, Twitter, and Vimeo support is coming soon.\nPlease try a TikTok link for instant download.`);
       } else {
         setError(message);
       }
@@ -224,10 +220,7 @@ export function HomeClient() {
     setIsPlayerOpen(true);
   };
 
-  const clearError = () => {
-    setError("");
-    setShowEmailForm(false);
-  };
+  const clearError = () => setError("");
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4">
@@ -236,30 +229,6 @@ export function HomeClient() {
           <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
           <div className="flex-1">
             <p className="text-red-200 text-sm whitespace-pre-line">{error}</p>
-            {showEmailForm && (
-              <div className="mt-3 flex gap-2">
-                <input
-                  type="email"
-                  placeholder="your@email.com"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-3 py-2 bg-black/50 border border-red-700/50 rounded text-sm text-white placeholder-red-400/50"
-                />
-                <button
-                  onClick={() => {
-                    if (email.includes("@")) {
-                      alert("Thanks! We\'ll notify you when YouTube HD is restored.");
-                      setEmail("");
-                      setShowEmailForm(false);
-                    }
-                  }}
-                  className="px-4 py-2 bg-red-600 hover:bg-red-500 rounded text-sm text-white flex items-center gap-2"
-                >
-                  <Mail className="w-4 h-4" />
-                  Notify Me
-                </button>
-              </div>
-            )}
             <button onClick={clearError} className="text-red-400 text-xs mt-2 hover:text-red-300 underline">Dismiss</button>
           </div>
         </div>
