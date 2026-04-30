@@ -8,30 +8,30 @@ const inter = Inter({
 });
 
 export const metadata: Metadata = {
-  title: "MediaBackup Pro - Universal Video Backup & Converter",
+  title: "TikTok Video Downloader — No Watermark, HD Quality, Free",
   description:
-    "Free online tool to backup videos from YouTube, TikTok, Instagram, Twitter and more. Convert to MP4/MP3 in HD quality. No signup.",
+    "Free online TikTok video downloader. Download TikTok videos without watermark in HD quality MP4 format. No signup, no ads, unlimited downloads.",
   keywords: [
-    "video backup",
-    "youtube downloader",
-    "tiktok video saver",
-    "instagram video download",
-    "twitter video download",
-    "online video converter",
-    "mp4 download",
-    "mp3 extractor",
+    "tiktok video downloader",
+    "download tiktok videos",
+    "tiktok no watermark",
+    "tiktok mp4 download",
+    "tiktok saver",
+    "tiktok backup",
+    "free tiktok downloader",
+    "online video downloader",
   ],
   openGraph: {
-    title: "MediaBackup Pro - Universal Video Backup & Converter",
+    title: "TikTok Video Downloader — No Watermark, HD Quality",
     description:
-      "Free online tool to backup videos from YouTube, TikTok, Instagram, Twitter and more.",
+      "Free online tool to download TikTok videos without watermark. HD quality MP4, no signup required.",
     type: "website",
-    url: "https://mediabackup.io",
+    url: "https://www.videodownloaderai.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "MediaBackup Pro",
-    description: "Backup videos from 8 platforms in HD quality. Free, no signup.",
+    title: "TikTok Video Downloader",
+    description: "Download TikTok videos without watermark. Free, HD quality, no signup.",
   },
   robots: {
     index: true,
@@ -45,7 +45,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://mediabackup.io",
+    canonical: "https://www.videodownloaderai.com",
   },
 };
 
