@@ -6,7 +6,7 @@ import { FormatSelector } from "./FormatSelector";
 import { DownloadManager } from "./DownloadManager";
 import { VideoPlayer } from "./VideoPlayer";
 import { RecentBackups } from "./RecentBackups";
-import { Loader2, AlertCircle } from "lucide-react";
+import { Loader2, AlertCircle, Mail } from "lucide-react";
 
 interface VideoData {
   platform: string;
@@ -51,6 +51,8 @@ export function HomeClient() {
     format: string;
     date: string;
   }>>([]);
+  const [email, setEmail] = useState("");
+  const [showEmailForm, setShowEmailForm] = useState(false);
 
   useEffect(() => {
     try {
@@ -84,6 +86,7 @@ export function HomeClient() {
     setError("");
     setVideoData(null);
     setStreamData(null);
+    setShowEmailForm(false);
 
     if (!url.trim()) {
       setError("Please enter a video URL.");
@@ -125,7 +128,14 @@ export function HomeClient() {
       setIsSelectorOpen(true);
     } catch (err) {
       const message = err instanceof Error ? err.message : "Failed to analyze video";
-      setError(message);
+
+      // YouTube 反爬降级：显示优雅提示 + 收集邮箱
+      if (url.includes("youtube.com") || url.includes("youtu.be")) {
+        setShowEmailForm(true);
+        setError(`YouTube temporarily restricted due to anti-bot protection.\nTry TikTok, Instagram, Twitter, or Vimeo for instant download.\nOr leave your email to get notified when YouTube HD is restored.`);
+      } else {
+        setError(message);
+      }
     } finally {
       setIsAnalyzing(false);
     }
@@ -150,7 +160,6 @@ export function HomeClient() {
 
       const contentType = res.headers.get("Content-Type") || "";
 
-      // 如果返回 JSON（错误信息或直链）
       if (contentType.includes("application/json")) {
         const data = await res.json();
         if (!res.ok || !data.success) {
@@ -164,7 +173,6 @@ export function HomeClient() {
         return;
       }
 
-      // 如果返回二进制文件流（MP4）
       if (contentType.includes("video") || contentType.includes("octet-stream")) {
         const blob = await res.blob();
         const downloadUrl = window.URL.createObjectURL(blob);
@@ -216,7 +224,10 @@ export function HomeClient() {
     setIsPlayerOpen(true);
   };
 
-  const clearError = () => setError("");
+  const clearError = () => {
+    setError("");
+    setShowEmailForm(false);
+  };
 
   return (
     <div className="w-full max-w-3xl mx-auto px-4">
@@ -224,8 +235,32 @@ export function HomeClient() {
         <div className="mb-4 p-4 bg-red-900/30 border border-red-700/50 rounded-lg flex items-start gap-3">
           <AlertCircle className="w-5 h-5 text-red-500 shrink-0 mt-0.5" />
           <div className="flex-1">
-            <p className="text-red-200 text-sm">{error}</p>
-            <button onClick={clearError} className="text-red-400 text-xs mt-1 hover:text-red-300 underline">Dismiss</button>
+            <p className="text-red-200 text-sm whitespace-pre-line">{error}</p>
+            {showEmailForm && (
+              <div className="mt-3 flex gap-2">
+                <input
+                  type="email"
+                  placeholder="your@email.com"
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                  className="flex-1 px-3 py-2 bg-black/50 border border-red-700/50 rounded text-sm text-white placeholder-red-400/50"
+                />
+                <button
+                  onClick={() => {
+                    if (email.includes("@")) {
+                      alert("Thanks! We\'ll notify you when YouTube HD is restored.");
+                      setEmail("");
+                      setShowEmailForm(false);
+                    }
+                  }}
+                  className="px-4 py-2 bg-red-600 hover:bg-red-500 rounded text-sm text-white flex items-center gap-2"
+                >
+                  <Mail className="w-4 h-4" />
+                  Notify Me
+                </button>
+              </div>
+            )}
+            <button onClick={clearError} className="text-red-400 text-xs mt-2 hover:text-red-300 underline">Dismiss</button>
           </div>
         </div>
       )}
