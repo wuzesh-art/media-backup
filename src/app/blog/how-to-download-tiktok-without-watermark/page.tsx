@@ -1,5 +1,6 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import type { Metadata } from "next";
-import Image from "next/image";
 
 export const metadata: Metadata = {
   title: "How to Download TikTok Videos Without Watermark: Complete 2026 Guide",
