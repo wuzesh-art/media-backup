@@ -42,6 +42,15 @@ interface FormatSelectorProps {
   onStart: () => void;
 }
 
+// 清理标题中的标签和@提及，用于显示
+function cleanTitle(title: string): string {
+  return title
+    .replace(/#\w+/g, '')  // 移除 #标签
+    .replace(/@\w+/g, '')   // 移除 @提及
+    .replace(/\s+/g, ' ')   // 合并多余空格
+    .trim();
+}
+
 export function FormatSelector({
   open, onOpenChange, videoData, selectedFormat, onSelect, onStart,
 }: FormatSelectorProps) {
@@ -63,42 +72,48 @@ export function FormatSelector({
 
   const { platform, title, author, duration, thumbnail, formats } = videoData;
   const color = PLATFORM_COLORS[platform] || "#00F2EA";
+  const displayTitle = cleanTitle(title) || "Untitled Video";
 
   // 显示所有格式，不过滤
   const videoFormats = formats;
 
   return (
     <Dialog open={open} onOpenChange={onOpenChange}>
-      <DialogContent className="bg-zinc-900 border-zinc-800 text-white max-w-2xl">
+      <DialogContent className="bg-zinc-900 border-zinc-800 text-white max-w-lg w-full">
         <DialogHeader>
-          <DialogTitle className="flex items-center gap-2">
-            <span className="w-3 h-3 rounded-full" style={{ backgroundColor: color }} />
+          <DialogTitle className="flex items-center gap-2 text-base">
+            <span className="w-3 h-3 rounded-full shrink-0" style={{ backgroundColor: color }} />
             Select Format
           </DialogTitle>
         </DialogHeader>
 
-        {/* Video Info */}
-        <div className="flex gap-4 mb-4">
+        {/* Video Info - 修复溢出问题 */}
+        <div className="flex gap-3 mb-4">
           {thumbnail && (
-            <div className="relative w-32 h-24 rounded-lg overflow-hidden shrink-0">
-              <Image src={thumbnail} alt={title} fill className="object-cover" />
+            <div className="relative w-24 h-18 rounded-lg overflow-hidden shrink-0">
+              <Image src={thumbnail} alt={displayTitle} fill className="object-cover" />
             </div>
           )}
-          <div className="flex-1 min-w-0">
-            <h3 className="font-semibold truncate">{title}</h3>
-            <p className="text-sm text-gray-400">{author}</p>
+          <div className="flex-1 min-w-0 overflow-hidden">
+            <h3 
+              className="font-semibold text-sm line-clamp-2 break-words" 
+              title={title}
+            >
+              {displayTitle}
+            </h3>
+            <p className="text-xs text-gray-400 truncate mt-1">{author}</p>
             <div className="flex items-center gap-2 mt-1">
-              <span className="text-xs px-2 py-1 rounded bg-zinc-800 capitalize">{platform}</span>
-              <span className="text-xs text-gray-400">{duration}</span>
+              <span className="text-xs px-2 py-0.5 rounded bg-zinc-800 capitalize">{platform}</span>
+              <span className="text-xs text-gray-400">{duration}s</span>
             </div>
           </div>
         </div>
 
         {/* Tabs */}
-        <div className="flex gap-2 mb-4">
+        <div className="flex gap-2 mb-3">
           <button
             onClick={() => setActiveTab("video")}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
               activeTab === "video" ? "bg-white text-black" : "bg-zinc-800 text-gray-300 hover:bg-zinc-700"
             }`}
           >
@@ -106,7 +121,7 @@ export function FormatSelector({
           </button>
           <button
             onClick={() => setActiveTab("audio")}
-            className={`flex items-center gap-2 px-4 py-2 rounded-lg text-sm font-medium transition-colors ${
+            className={`flex items-center gap-2 px-3 py-2 rounded-lg text-sm font-medium transition-colors ${
               activeTab === "audio" ? "bg-white text-black" : "bg-zinc-800 text-gray-300 hover:bg-zinc-700"
             }`}
           >
@@ -117,11 +132,11 @@ export function FormatSelector({
         {/* Format List */}
         {videoFormats.length === 0 ? (
           <div className="flex items-center gap-3 p-4 bg-zinc-800/50 rounded-lg text-gray-400">
-            <AlertTriangle className="w-5 h-5 text-yellow-500" />
+            <AlertTriangle className="w-5 h-5 text-yellow-500 shrink-0" />
             <span>No video formats available</span>
           </div>
         ) : (
-          <div className="space-y-2 max-h-64 overflow-y-auto">
+          <div className="space-y-2 max-h-48 overflow-y-auto pr-1">
             {videoFormats.map((format) => (
               <button
                 key={format.formatId}
@@ -132,17 +147,17 @@ export function FormatSelector({
                     : "border-zinc-700 bg-zinc-800/50 hover:border-zinc-600"
                 }`}
               >
-                <div className="flex items-center gap-3">
-                  <div className="w-8 h-8 rounded bg-zinc-700 flex items-center justify-center">
+                <div className="flex items-center gap-3 min-w-0">
+                  <div className="w-8 h-8 rounded bg-zinc-700 flex items-center justify-center shrink-0">
                     <Video className="w-4 h-4" />
                   </div>
-                  <div className="text-left">
-                    <p className="font-medium text-sm">{format.quality}</p>
+                  <div className="text-left min-w-0">
+                    <p className="font-medium text-sm truncate">{format.quality}</p>
                     <p className="text-xs text-gray-400">{format.fileSizeApprox} • {format.mimeType}</p>
                   </div>
                 </div>
                 {selectedFormat === format.formatId && (
-                  <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center">
+                  <div className="w-5 h-5 rounded-full bg-red-500 flex items-center justify-center shrink-0 ml-2">
                     <div className="w-2 h-2 bg-white rounded-full" />
                   </div>
                 )}
