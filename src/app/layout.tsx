@@ -71,6 +71,42 @@ export default function RootLayout({
             `,
           }}
         />
+        <script
+  type="application/ld+json"
+  dangerouslySetInnerHTML={{
+    __html: JSON.stringify({
+      "@context": "https://schema.org",
+      "@type": "SoftwareApplication",
+      "name": "TikTok Video Downloader",
+      "applicationCategory": "WebApplication",
+      "operatingSystem": "Any",
+      "offers": {
+        "@type": "Offer",
+        "price": "0",
+        "priceCurrency": "USD"
+      },
+      "aggregateRating": {
+        "@type": "AggregateRating",
+        "ratingValue": "4.8",
+        "ratingCount": "10000"
+      },
+      "description": "Free online TikTok video downloader without watermark. HD quality MP4, no signup required.",
+      "url": "https://www.videodownloaderai.com",
+      "image": "https://www.videodownloaderai.com/og-image.png",
+      "author": {
+        "@type": "Organization",
+        "name": "VideoDownloderAI"
+      },
+      "featureList": [
+        "No watermark download",
+        "HD quality up to 1024p",
+        "No signup required",
+        "Mobile friendly",
+        "Direct MP4 download"
+      ]
+    })
+  }}
+/>
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-black text-white`}>
         {children}
