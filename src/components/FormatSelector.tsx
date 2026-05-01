@@ -42,12 +42,12 @@ interface FormatSelectorProps {
   onStart: () => void;
 }
 
-// 清理标题中的标签和@提及，用于显示
+// 清理标题中的 # 和 @ 符号，保留文字
 function cleanTitle(title: string): string {
   return title
-    .replace(/#\w+/g, '')  // 移除 #标签
-    .replace(/@\w+/g, '')   // 移除 @提及
-    .replace(/\s+/g, ' ')   // 合并多余空格
+    .replace(/#/g, ' ')   // # 替换为空格
+    .replace(/@/g, ' ')   // @ 替换为空格
+    .replace(/\s+/g, ' ') // 合并多余空格
     .trim();
 }
 
