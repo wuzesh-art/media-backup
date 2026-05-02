@@ -59,7 +59,7 @@ export default function RootLayout({
       <head>
         <script
           async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX"}`}
+          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || "G-8G37X5QLLC"}`}
         />
         <script
           dangerouslySetInnerHTML={{
