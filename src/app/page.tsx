@@ -99,6 +99,21 @@ export default function Home() {
           </div>
         </div>
 
+        {/* Recommended Reading - 新增 */}
+        <div className="mt-20 max-w-3xl mx-auto">
+          <h2 className="text-2xl font-bold mb-6 text-center">Recommended Reading</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
+            <a href="/blog/how-to-download-tiktok-without-watermark" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors">
+              <h3 className="font-semibold mb-2">How to Download TikTok Videos Without Watermark</h3>
+              <p className="text-gray-400 text-sm">Step-by-step guide for iPhone, Android, and desktop. Updated 2026.</p>
+            </a>
+            <a href="/blog/remove-tiktok-watermark" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors">
+              <h3 className="font-semibold mb-2">How to Remove TikTok Watermark: 3 Free Methods</h3>
+              <p className="text-gray-400 text-sm">Compare cropping, online tools, and editing software. Best method wins.</p>
+            </a>
+          </div>
+        </div>
+
         {/* Internal Links */}
         <div className="mt-20 text-center">
           <p className="text-gray-400 mb-4">Need more help?</p>
