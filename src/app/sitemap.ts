@@ -11,6 +11,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/terms", priority: 0.3, freq: "yearly" as const },
     { path: "/blog/how-to-download-tiktok-without-watermark", priority: 0.7, freq: "monthly" as const },
     { path: "/blog/remove-tiktok-watermark", priority: 0.7, freq: "monthly" as const },
+    { path: "/blog/tiktok-downloader-statistics-2026", priority: 0.7, freq: "monthly" as const },
   ];
 
   return routes.map((route) => ({
