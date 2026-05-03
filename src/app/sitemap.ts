@@ -12,6 +12,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/how-to-download-tiktok-without-watermark", priority: 0.7, freq: "monthly" as const },
     { path: "/blog/remove-tiktok-watermark", priority: 0.7, freq: "monthly" as const },
     { path: "/blog/tiktok-downloader-statistics-2026", priority: 0.7, freq: "monthly" as const },
+    { path: "/blog/how-to-download-tiktok-videos-on-pc", priority: 0.7, freq: "monthly" as const },
+    { path: "/blog/does-tiktok-notify-when-you-download", priority: 0.7, freq: "monthly" as const },
+    { path: "/blog/how-to-download-tiktok-videos-complete-guide", priority: 0.8, freq: "monthly" as const },
   ];
 
   return routes.map((route) => ({
