@@ -5,6 +5,7 @@ import "./globals.css";
 const inter = Inter({
   subsets: ["latin"],
   variable: "--font-inter",
+  display: "swap",
 });
 
 export const metadata: Metadata = {
@@ -57,6 +58,11 @@ export default function RootLayout({
   return (
     <html lang="en">
       <head>
+        {/* 预连接关键域名 */}
+        <link rel="preconnect" href="https://www.videodownloaderai.com" />
+        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
+        
+        {/* Google Analytics - 异步加载 + 延迟 pageview */}
         <script
           async
           src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || "G-8G37X5QLLC"}`}
@@ -67,46 +73,53 @@ export default function RootLayout({
               window.dataLayer = window.dataLayer || [];
               function gtag(){dataLayer.push(arguments);}
               gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || "G-XXXXXXXXXX"}');
+              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || "G-8G37X5QLLC"}', {
+                send_page_view: false,
+              });
+              setTimeout(() => {
+                gtag('event', 'page_view');
+              }, 3000);
             `,
           }}
         />
+        
+        {/* Schema.org SoftwareApplication */}
         <script
-  type="application/ld+json"
-  dangerouslySetInnerHTML={{
-    __html: JSON.stringify({
-      "@context": "https://schema.org",
-      "@type": "SoftwareApplication",
-      "name": "TikTok Video Downloader",
-      "applicationCategory": "WebApplication",
-      "operatingSystem": "Any",
-      "offers": {
-        "@type": "Offer",
-        "price": "0",
-        "priceCurrency": "USD"
-      },
-      "aggregateRating": {
-        "@type": "AggregateRating",
-        "ratingValue": "4.8",
-        "ratingCount": "10000"
-      },
-      "description": "Free online TikTok video downloader without watermark. HD quality MP4, no signup required.",
-      "url": "https://www.videodownloaderai.com",
-      "image": "https://www.videodownloaderai.com/og-image.png",
-      "author": {
-        "@type": "Organization",
-        "name": "VideoDownloderAI"
-      },
-      "featureList": [
-        "No watermark download",
-        "HD quality up to 1024p",
-        "No signup required",
-        "Mobile friendly",
-        "Direct MP4 download"
-      ]
-    })
-  }}
-/>
+          type="application/ld+json"
+          dangerouslySetInnerHTML={{
+            __html: JSON.stringify({
+              "@context": "https://schema.org",
+              "@type": "SoftwareApplication",
+              "name": "TikTok Video Downloader",
+              "applicationCategory": "WebApplication",
+              "operatingSystem": "Any",
+              "offers": {
+                "@type": "Offer",
+                "price": "0",
+                "priceCurrency": "USD"
+              },
+              "aggregateRating": {
+                "@type": "AggregateRating",
+                "ratingValue": "4.8",
+                "ratingCount": "10000"
+              },
+              "description": "Free online TikTok video downloader without watermark. HD quality MP4, no signup required.",
+              "url": "https://www.videodownloaderai.com",
+              "image": "https://www.videodownloaderai.com/og-image.png",
+              "author": {
+                "@type": "Organization",
+                "name": "VideoDownloderAI"
+              },
+              "featureList": [
+                "No watermark download",
+                "HD quality up to 1024p",
+                "No signup required",
+                "Mobile friendly",
+                "Direct MP4 download"
+              ]
+            })
+          }}
+        />
       </head>
       <body className={`${inter.variable} font-sans antialiased bg-black text-white`}>
         {children}
