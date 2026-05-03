@@ -12,7 +12,7 @@ export default function Home() {
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-4">
             Download TikTok videos without watermark. HD quality, MP4 format. No signup required.
           </p>
-          <p className="text-sm text-gray-500">
+          <p className="text-sm text-gray-400">
             YouTube, Instagram, Twitter, and Vimeo support coming soon.
           </p>
         </div>
@@ -31,26 +31,29 @@ export default function Home() {
         </div>
 
         {/* Features Grid */}
-        <div className="mt-20 grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
-          <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-            <div className="text-4xl mb-4">🚫</div>
-            <h3 className="font-semibold text-lg mb-2">No Watermark</h3>
-            <p className="text-gray-400 text-sm">Download clean TikTok videos without the annoying watermark</p>
-          </div>
-          <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-            <div className="text-4xl mb-4">🎬</div>
-            <h3 className="font-semibold text-lg mb-2">HD Quality</h3>
-            <p className="text-gray-400 text-sm">Up to 1024p resolution in MP4 format for best viewing</p>
-          </div>
-          <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-            <div className="text-4xl mb-4">⚡</div>
-            <h3 className="font-semibold text-lg mb-2">No Signup</h3>
-            <p className="text-gray-400 text-sm">No account required. Paste link and download instantly</p>
-          </div>
-          <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
-            <div className="text-4xl mb-4">📱</div>
-            <h3 className="font-semibold text-lg mb-2">Mobile Friendly</h3>
-            <p className="text-gray-400 text-sm">Works perfectly on iPhone Safari and Android Chrome</p>
+        <div className="mt-20">
+          <h2 className="text-2xl font-bold text-center mb-8">Features</h2>
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
+              <div className="text-4xl mb-4">🚫</div>
+              <h3 className="font-semibold text-lg mb-2">No Watermark</h3>
+              <p className="text-gray-400 text-sm">Download clean TikTok videos without the annoying watermark</p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
+              <div className="text-4xl mb-4">🎬</div>
+              <h3 className="font-semibold text-lg mb-2">HD Quality</h3>
+              <p className="text-gray-400 text-sm">Up to 1024p resolution in MP4 format for best viewing</p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
+              <div className="text-4xl mb-4">⚡</div>
+              <h3 className="font-semibold text-lg mb-2">No Signup</h3>
+              <p className="text-gray-400 text-sm">No account required. Paste link and download instantly</p>
+            </div>
+            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 text-center">
+              <div className="text-4xl mb-4">📱</div>
+              <h3 className="font-semibold text-lg mb-2">Mobile Friendly</h3>
+              <p className="text-gray-400 text-sm">Works perfectly on iPhone Safari and Android Chrome</p>
+            </div>
           </div>
         </div>
 
@@ -99,7 +102,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Recommended Reading - 新增 */}
+        {/* Recommended Reading */}
         <div className="mt-20 max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6 text-center">Recommended Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -129,7 +132,7 @@ export default function Home() {
         </div>
 
         {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-gray-800 text-center text-gray-500 text-sm">
+        <div className="mt-20 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
           <p>VideoDownloderAI.com — Free TikTok Video Downloader</p>
           <p className="mt-2">Not affiliated with TikTok. For personal use only.</p>
         </div>
