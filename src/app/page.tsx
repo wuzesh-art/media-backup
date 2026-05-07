@@ -6,7 +6,7 @@ export default function Home() {
       {/* Header / Nav */}
       <header className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center" aria-label="Main navigation">
-          <a href="/" className="text-xl font-bold text-white hover:text-gray-300 transition-colors">
+        <a href="/" className="text-xl font-bold text-white hover:text-gray-300 transition-colors px-3 py-3 min-h-[48px] flex items-center">
             VideoDownloderAI
           </a>
           <div className="flex gap-4">
