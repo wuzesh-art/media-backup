@@ -263,6 +263,15 @@ export default function BlogPost() {
             </div>
           </section>
 
+<div className="mt-12 bg-gray-900/30 border border-gray-800 rounded-xl p-6">
+  <h3 className="font-bold mb-4">Related Articles</h3>
+  <div className="space-y-2">
+    <a href="/blog/how-to-download-tiktok-without-watermark" className="block text-red-500 hover:text-red-400">How to Download Without Watermark →</a>
+    <a href="/blog/how-to-download-tiktok-videos-on-pc" className="block text-red-500 hover:text-red-400">PC Download Guide →</a>
+    <a href="/blog/does-tiktok-notify-when-you-download" className="block text-red-500 hover:text-red-400">Does TikTok Notify? →</a>
+  </div>
+</div>
+          
           {/* CTA */}
           <div className="bg-red-900/20 border border-red-800/50 rounded-xl p-8 text-center mb-12">
             <h2 className="text-2xl font-bold mb-4">Get Clean TikTok Videos Now</h2>
