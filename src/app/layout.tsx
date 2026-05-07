@@ -62,6 +62,17 @@ export default function RootLayout({
         <link rel="preconnect" href="https://www.videodownloaderai.com" />
         <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
         
+        {/* Favicon & Apple Touch Icon */}
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
+        <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
+        
+        {/* Open Graph / Twitter Image */}
+        <meta property="og:image" content="https://www.videodownloaderai.com/og-image.png" />
+        <meta property="og:image:width" content="1200" />
+        <meta property="og:image:height" content="630" />
+        <meta property="og:image:type" content="image/png" />
+        <meta name="twitter:image" content="https://www.videodownloaderai.com/og-image.png" />
+        
         {/* Google Analytics - 异步加载 + 延迟 pageview */}
         <script
           async
