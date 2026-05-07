@@ -97,6 +97,15 @@ export default function FAQPage() {
           ))}
         </div>
 
+        <div className="mt-12 bg-gray-900/30 border border-gray-800 rounded-xl p-6">
+          <h3 className="font-bold mb-4">Related Guides</h3>
+        <div className="space-y-2">
+          <a href="/how-to-download-tiktok-videos" className="block text-red-500 hover:text-red-400">Step-by-Step Download Guide →</a>
+          <a href="/blog/how-to-download-tiktok-videos-on-pc" className="block text-red-500 hover:text-red-400">PC Download Tutorial →</a>
+          <a href="/blog/does-tiktok-notify-when-you-download" className="block text-red-500 hover:text-red-400">Privacy & Safety FAQ →</a>
+          <a href="/blog/tiktok-downloader-statistics-2026" className="block text-red-500 hover:text-red-400">2026 Usage Statistics →</a>
+       </div>
+       </div>
         {/* CTA */}
         <div className="mt-16 text-center bg-red-900/20 border border-red-800/50 rounded-xl p-8">
           <h2 className="text-2xl font-bold mb-4">Ready to Try It?</h2>
