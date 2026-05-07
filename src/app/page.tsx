@@ -6,7 +6,7 @@ export default function Home() {
       {/* Header / Nav */}
       <header className="container mx-auto px-4 py-4">
         <nav className="flex justify-between items-center" aria-label="Main navigation">
-        <a href="/" className="text-xl font-bold text-white hover:text-gray-300 transition-colors px-3 py-3 min-h-[48px] flex items-center">
+          <a href="/" className="text-xl font-bold text-white hover:text-gray-300 transition-colors px-3 py-3 min-h-[48px] flex items-center">
             VideoDownloderAI
           </a>
           <div className="flex gap-4">
@@ -126,7 +126,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Recommended Reading */}
+        {/* Recommended Reading - 6 个卡片，覆盖所有博客 */}
         <div className="mt-20 max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6 text-center">Recommended Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
@@ -138,10 +138,26 @@ export default function Home() {
               <h3 className="font-semibold mb-2">How to Remove TikTok Watermark: 3 Free Methods</h3>
               <p className="text-gray-400 text-sm">Compare cropping, online tools, and editing software. Best method wins.</p>
             </a>
+            <a href="/blog/how-to-download-tiktok-videos-on-pc" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors block">
+              <h3 className="font-semibold mb-2">How to Download on PC (Windows & Mac)</h3>
+              <p className="text-gray-400 text-sm">Step-by-step for desktop users. No software needed.</p>
+            </a>
+            <a href="/blog/does-tiktok-notify-when-you-download" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors block">
+              <h3 className="font-semibold mb-2">Does TikTok Notify When You Download?</h3>
+              <p className="text-gray-400 text-sm">Privacy guide: what TikTok tracks and what it doesn't.</p>
+            </a>
+            <a href="/blog/tiktok-downloader-statistics-2026" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors block">
+              <h3 className="font-semibold mb-2">TikTok Downloader Statistics 2026</h3>
+              <p className="text-gray-400 text-sm">Exclusive usage data from 2.3 million downloads.</p>
+            </a>
+            <a href="/blog/how-to-download-tiktok-videos-complete-guide" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors block">
+              <h3 className="font-semibold mb-2">Complete Guide: All Platforms</h3>
+              <p className="text-gray-400 text-sm">iPhone, Android, PC, Mac — one guide for every device.</p>
+            </a>
           </div>
         </div>
 
-        {/* Internal Links - 修复 Tap Target */}
+        {/* Internal Links */}
         <div className="mt-20 text-center">
           <p className="text-gray-400 mb-4">Need more help?</p>
           <div className="flex justify-center gap-4 items-center">
