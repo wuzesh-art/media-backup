@@ -15,8 +15,48 @@ export const metadata: Metadata = {
 };
 
 export default function HowToPage() {
+  // HowTo Schema for GEO (Generative Engine Optimization)
+  const howToSchema = {
+    "@context": "https://schema.org",
+    "@type": "HowTo",
+    "name": "How to Download TikTok Videos Without Watermark",
+    "description": "Step-by-step guide to download TikTok videos without watermark in HD quality. Free, no signup required. Works on iPhone, Android, Windows, and Mac.",
+    "totalTime": "PT2M",
+    "supply": ["TikTok video link", "Web browser"],
+    "tool": ["VideoDownloderAI.com"],
+    "step": [
+      {
+        "@type": "HowToStep",
+        "position": 1,
+        "name": "Copy the TikTok Video Link",
+        "text": "Open TikTok app or website, find the video you want, tap the Share button, then tap Copy Link.",
+        "url": "https://www.videodownloaderai.com/how-to-download-tiktok-videos#step1"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 2,
+        "name": "Paste Link and Analyze",
+        "text": "Go to VideoDownloderAI.com, paste the copied link in the input box, and click Analyze & Backup.",
+        "url": "https://www.videodownloaderai.com/how-to-download-tiktok-videos#step2"
+      },
+      {
+        "@type": "HowToStep",
+        "position": 3,
+        "name": "Select Quality and Download",
+        "text": "Choose 1024p or 1280p for HD quality, click Start Backup, then click Download File to save the MP4.",
+        "url": "https://www.videodownloaderai.com/how-to-download-tiktok-videos#step3"
+      }
+    ]
+  };
+
   return (
     <main className="min-h-screen bg-black text-white">
+      {/* HowTo JSON-LD Schema - GEO Optimization */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(howToSchema) }}
+      />
+
       <div className="container mx-auto px-4 py-16 max-w-4xl">
         {/* Breadcrumb */}
         <nav className="text-sm text-gray-500 mb-8">
@@ -38,7 +78,7 @@ export default function HowToPage() {
           <h2 className="text-2xl font-bold mb-6 text-red-500">Method 1: On Computer (Windows/Mac)</h2>
           
           <div className="space-y-8">
-            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+            <div id="step1" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 scroll-mt-20">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-bold shrink-0">1</div>
                 <div>
@@ -49,7 +89,7 @@ export default function HowToPage() {
               </div>
             </div>
 
-            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+            <div id="step2" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 scroll-mt-20">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-bold shrink-0">2</div>
                 <div>
@@ -60,12 +100,12 @@ export default function HowToPage() {
               </div>
             </div>
 
-            <div className="bg-gray-900/50 border border-gray-800 rounded-xl p-6">
+            <div id="step3" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 scroll-mt-20">
               <div className="flex items-start gap-4">
                 <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-bold shrink-0">3</div>
                 <div>
                   <h3 className="font-semibold text-lg mb-2">Choose Quality & Download</h3>
-                  <p className="text-gray-400 mb-3">Select <strong>1024p</strong> for HD quality (recommended) or lower resolution if you need a smaller file. Click <strong>Start Backup</strong>, then <strong>Download File</strong>.</p>
+                  <p className="text-gray-400 mb-3">Select <strong>1024p or 1280p</strong> for HD quality (recommended) or lower resolution if you need a smaller file. Click <strong>Start Backup</strong>, then <strong>Download File</strong>.</p>
                   <p className="text-gray-500 text-sm">The MP4 file saves directly to your Downloads folder.</p>
                 </div>
               </div>
