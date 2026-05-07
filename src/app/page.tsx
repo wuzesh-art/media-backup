@@ -1,3 +1,5 @@
+/* eslint-disable react/no-unescaped-entities */
+
 import { HomeClient } from "@/components/HomeClient";
 
 export default function Home() {
