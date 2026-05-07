@@ -2,8 +2,32 @@ import { HomeClient } from "@/components/HomeClient";
 
 export default function Home() {
   return (
-    <main className="min-h-screen bg-black text-white">
-      <div className="container mx-auto px-4 py-16">
+    <div className="min-h-screen bg-black text-white">
+      {/* Header / Nav */}
+      <header className="container mx-auto px-4 py-4">
+        <nav className="flex justify-between items-center" aria-label="Main navigation">
+          <a href="/" className="text-xl font-bold text-white hover:text-gray-300 transition-colors">
+            VideoDownloderAI
+          </a>
+          <div className="flex gap-4">
+            <a 
+              href="/how-to-download-tiktok-videos" 
+              className="text-gray-400 hover:text-white transition-colors px-3 py-2 min-h-[48px] flex items-center"
+            >
+              Guide
+            </a>
+            <a 
+              href="/faq" 
+              className="text-gray-400 hover:text-white transition-colors px-3 py-2 min-h-[48px] flex items-center"
+            >
+              FAQ
+            </a>
+          </div>
+        </nav>
+      </header>
+
+      {/* Main Content */}
+      <main className="container mx-auto px-4 py-12">
         {/* Hero Section */}
         <div className="text-center mb-16">
           <h1 className="text-5xl md:text-7xl font-bold mb-6 tracking-tight">
@@ -106,37 +130,43 @@ export default function Home() {
         <div className="mt-20 max-w-3xl mx-auto">
           <h2 className="text-2xl font-bold mb-6 text-center">Recommended Reading</h2>
           <div className="grid grid-cols-1 md:grid-cols-2 gap-4">
-            <a href="/blog/how-to-download-tiktok-without-watermark" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors">
+            <a href="/blog/how-to-download-tiktok-without-watermark" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors block">
               <h3 className="font-semibold mb-2">How to Download TikTok Videos Without Watermark</h3>
               <p className="text-gray-400 text-sm">Step-by-step guide for iPhone, Android, and desktop. Updated 2026.</p>
             </a>
-            <a href="/blog/remove-tiktok-watermark" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors">
+            <a href="/blog/remove-tiktok-watermark" className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 hover:border-red-500 transition-colors block">
               <h3 className="font-semibold mb-2">How to Remove TikTok Watermark: 3 Free Methods</h3>
               <p className="text-gray-400 text-sm">Compare cropping, online tools, and editing software. Best method wins.</p>
             </a>
           </div>
         </div>
 
-        {/* Internal Links */}
+        {/* Internal Links - 修复 Tap Target */}
         <div className="mt-20 text-center">
           <p className="text-gray-400 mb-4">Need more help?</p>
-          <div className="flex justify-center gap-4">
-            <a href="/how-to-download-tiktok-videos" className="text-red-500 hover:text-red-400 underline">
+          <div className="flex justify-center gap-4 items-center">
+            <a 
+              href="/how-to-download-tiktok-videos" 
+              className="text-red-500 hover:text-red-400 underline px-4 py-3 min-h-[48px] flex items-center"
+            >
               Step-by-Step Guide
             </a>
             <span className="text-gray-600">|</span>
-            <a href="/faq" className="text-red-500 hover:text-red-400 underline">
+            <a 
+              href="/faq" 
+              className="text-red-500 hover:text-red-400 underline px-4 py-3 min-h-[48px] flex items-center"
+            >
               Full FAQ
             </a>
           </div>
         </div>
+      </main>
 
-        {/* Footer */}
-        <div className="mt-20 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
-          <p>VideoDownloderAI.com — Free TikTok Video Downloader</p>
-          <p className="mt-2">Not affiliated with TikTok. For personal use only.</p>
-        </div>
-      </div>
-    </main>
+      {/* Footer */}
+      <footer className="mt-20 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
+        <p>VideoDownloderAI.com — Free TikTok Video Downloader</p>
+        <p className="mt-2">Not affiliated with TikTok. For personal use only.</p>
+      </footer>
+    </div>
   );
 }
