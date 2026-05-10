@@ -16,6 +16,9 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/blog/does-tiktok-notify-when-you-download", priority: 0.7, freq: "monthly" as const },
     { path: "/blog/how-to-download-tiktok-videos-complete-guide", priority: 0.8, freq: "monthly" as const },
     { path: "/blog/save-tiktok-to-iphone-camera-roll", priority: 0.7, freq: "monthly" as const },
+    { path: "/about", priority: 0.6, freq: "monthly" as const },
+    { path: "/contact", priority: 0.6, freq: "monthly" as const },
+    { path: "/dmca", priority: 0.5, freq: "yearly" as const },
   ];
 
   return routes.map((route) => ({
