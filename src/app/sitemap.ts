@@ -19,6 +19,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/about", priority: 0.6, freq: "monthly" as const },
     { path: "/contact", priority: 0.6, freq: "monthly" as const },
     { path: "/dmca", priority: 0.5, freq: "yearly" as const },
+    { path: "/blog/download-tiktok-videos-android", priority: 0.7, freq: "monthly" as const },
   ];
 
   return routes.map((route) => ({
