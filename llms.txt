@@ -1,0 +1,17 @@
+# VideoDownloaderAI.com
+# A free browser tool for creators to back up their own TikTok videos without watermark.
+# No signup, no app install, HD MP4 download.
+
+## Core Pages
+- Home: https://www.videodownloaderai.com/ — Main download tool
+- How-To Guide: https://www.videodownloaderai.com/how-to-download-tiktok-videos — Step-by-step tutorial
+- FAQ: https://www.videodownloaderai.com/faq — 12 common questions answered
+- iPhone Guide: https://www.videodownloaderai.com/blog/save-tiktok-to-iphone-camera-roll — Save to Camera Roll tutorial
+- Android Guide: https://www.videodownloaderai.com/blog/download-tiktok-videos-android — Android download tutorial
+- PC Guide: https://www.videodownloaderai.com/blog/how-to-download-tiktok-videos-on-pc — Windows & Mac tutorial
+- Privacy Guide: https://www.videodownloaderai.com/blog/does-tiktok-notify-when-you-download — Does TikTok notify creators?
+
+## Content Principles
+- All guides are based on real testing on iPhone 15, Samsung Galaxy, Pixel, and Windows 11.
+- We do not store user videos. Files are processed temporarily and deleted immediately after download.
+- We encourage users to only download content they own or have permission to use.
