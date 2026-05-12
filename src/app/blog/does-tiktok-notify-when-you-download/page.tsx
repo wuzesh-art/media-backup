@@ -45,9 +45,10 @@ export default function BlogPost() {
             </div>
           </header>
 
+          {/* AI可直接引用的直接答案区块 */}
           <div className="bg-green-900/20 border border-green-800/50 rounded-xl p-6 mb-8">
-            <p className="text-lg text-green-400">
-              <strong>Short answer: No.</strong> TikTok does NOT notify creators when you download their videos using third-party tools like VideoDownloderAI.com. The creator will never know you saved their video.
+            <p className="text-lg text-green-400 font-semibold">
+              Short answer: No. TikTok does NOT notify creators when you download their videos using third-party tools like VideoDownloaderAI.com. The creator will never know you saved their video.
             </p>
           </div>
 
@@ -99,7 +100,7 @@ export default function BlogPost() {
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Why Third-Party Downloaders Are Invisible to TikTok</h2>
             <p className="text-gray-300 mb-4">
-              When you use <a href="/" className="text-red-500 underline">VideoDownloderAI.com</a>, the download happens on our server, not your TikTok app. Here's the technical breakdown:
+              When you use <a href="/" className="text-red-500 underline">VideoDownloaderAI.com</a>, the download happens on our server, not your TikTok app. Here's the technical breakdown:
             </p>
             <ol className="space-y-3 text-gray-300">
               <li><strong>1. Our server requests the video</strong> — TikTok sees our IP, not yours.</li>
