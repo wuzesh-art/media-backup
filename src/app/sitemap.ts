@@ -21,6 +21,7 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { path: "/dmca", priority: 0.5, freq: "yearly" as const },
     { path: "/blog/download-tiktok-videos-android", priority: 0.7, freq: "monthly" as const },
     { path: "/blog/tiktok-downloader-not-working", priority: 0.8, freq: "monthly" as const },
+    { path: "/blog/remove-tiktok-watermark-on-iphone", priority: 0.7, freq: "monthly" as const },
   ];
 
   return routes.map((route) => ({
