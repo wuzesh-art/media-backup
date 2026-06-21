@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "How to Download TikTok Videos: Complete 2026 Guide",
     description: "iPhone, Android, PC, Mac — all platforms covered. No watermark, HD quality.",
     type: "article",
-    url: "https://www.videodownloaderai.com/blog/how-to-download-tiktok-videos-complete-guide",
+    url: "https://tiktok.gurubox.ai/blog/how-to-download-tiktok-videos-complete-guide",
     publishedTime: "2026-05-03",
   },
 };
