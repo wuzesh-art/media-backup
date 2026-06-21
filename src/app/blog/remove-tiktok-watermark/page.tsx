@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "How to Remove TikTok Watermark Free Online: 5 Easy Methods",
     description: "5 proven ways to remove TikTok watermark. Online tool, iPhone, Android, cropping, and saved videos. Free, no signup.",
     type: "article",
-    url: "https://www.videodownloaderai.com/blog/remove-tiktok-watermark",
+    url: "https://tiktok.gurubox.ai/blog/remove-tiktok-watermark",
     publishedTime: "2026-05-03",
   },
 };
@@ -30,7 +30,7 @@ export default function BlogPost() {
     publisher: {
       "@type": "Organization",
       name: "VideoDownloaderAI",
-      logo: { "@type": "ImageObject", url: "https://www.videodownloaderai.com/og-image.png" },
+      logo: { "@type": "ImageObject", url: "https://tiktok.gurubox.ai/og-image.png" },
     },
     datePublished: "2026-05-03",
     dateModified: "2026-05-23",
@@ -64,29 +64,26 @@ export default function BlogPost() {
             </div>
           </header>
 
-          {/* 直接回答区块 - AI可引用 */}
           <div className="bg-green-900/20 border border-green-800/50 rounded-xl p-6 mb-8">
             <p className="text-lg text-green-400 font-semibold">
               Quick Answer: You can remove a TikTok watermark by using an online watermark remover, cropping the video, using a mobile app, or downloading the original file before the watermark is applied. The fastest method is an online tool — paste the TikTok link and get a clean MP4 in 10 seconds.
             </p>
           </div>
 
-          {/* 合规提醒 */}
           <div className="bg-gray-900/30 border border-gray-800 rounded-lg p-4 mb-12">
             <p className="text-gray-400 text-sm">
               ⚠️ <strong>Only use these methods for videos you own or have permission to edit.</strong> Respect creators' rights. Not affiliated with TikTok.
             </p>
           </div>
 
-          {/* Method 1: Online Tool (主推) */}
           <section className="mb-12" id="method1">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Method 1: Use an Online TikTok Watermark Remover (Fastest)</h2>
             <p className="text-gray-300 mb-4">
-              The easiest way to remove a TikTok watermark is to download the original video file before TikTok adds the watermark overlay. Online tools like <a href="/" className="text-red-500 underline">VideoDownloaderAI.com</a> do this automatically.
+              The easiest way to remove a TikTok watermark is to download the original video file before TikTok adds the watermark overlay. Online tools like <a href="/" className="text-red-500 underline">VideoDownloaderAI</a> do this automatically.
             </p>
             <ol className="space-y-3 text-gray-300 list-decimal list-inside">
               <li>Copy the TikTok video link (Share → Copy Link)</li>
-              <li>Go to <a href="/" className="text-red-500 underline">VideoDownloaderAI.com</a></li>
+              <li>Go to <a href="/" className="text-red-500 underline">VideoDownloaderAI</a></li>
               <li>Paste the link, click <strong>Analyze</strong></li>
               <li>Select <strong>1024p HD</strong>, click <strong>Download File</strong></li>
               <li>The MP4 has no watermark — ready to edit or repost</li>
@@ -98,7 +95,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Method 2: iPhone */}
           <section className="mb-12" id="method2">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Method 2: Remove TikTok Watermark on iPhone</h2>
             <p className="text-gray-300 mb-4">
@@ -108,7 +104,7 @@ export default function BlogPost() {
               <p><strong>Option A: Online Tool (Recommended)</strong></p>
               <ol className="space-y-2 list-decimal list-inside pl-4">
                 <li>Use Safari (not Chrome) for direct Camera Roll access</li>
-                <li>Go to <a href="/" className="text-red-500 underline">VideoDownloaderAI.com</a></li>
+                <li>Go to <a href="/" className="text-red-500 underline">VideoDownloaderAI</a></li>
                 <li>Download the clean MP4</li>
                 <li>Tap Share → Save to Photos</li>
               </ol>
@@ -125,7 +121,6 @@ export default function BlogPost() {
             </p>
           </section>
 
-          {/* Method 3: Android */}
           <section className="mb-12" id="method3">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Method 3: Remove TikTok Watermark on Android</h2>
             <p className="text-gray-300 mb-4">
@@ -133,7 +128,7 @@ export default function BlogPost() {
             </p>
             <ol className="space-y-3 text-gray-300 list-decimal list-inside">
               <li>Copy the TikTok link</li>
-              <li>Open Chrome, go to <a href="/" className="text-red-500 underline">VideoDownloaderAI.com</a></li>
+              <li>Open Chrome, go to <a href="/" className="text-red-500 underline">VideoDownloaderAI</a></li>
               <li>Paste, analyze, download the clean file</li>
               <li>Find it in <strong>Files → Downloads</strong></li>
               <li>Share directly to Instagram, WhatsApp, or any app</li>
@@ -143,7 +138,6 @@ export default function BlogPost() {
             </p>
           </section>
 
-          {/* Method 4: Cropping */}
           <section className="mb-12" id="method4">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Method 4: Remove Watermark by Cropping (Any Device)</h2>
             <p className="text-gray-300 mb-4">
@@ -165,7 +159,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Method 5: Saved Video */}
           <section className="mb-12" id="method5">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Method 5: Remove Watermark from a Saved Video</h2>
             <p className="text-gray-300 mb-4">
@@ -178,7 +171,6 @@ export default function BlogPost() {
             </ul>
           </section>
 
-          {/* Quality & Legal */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Can You Remove a TikTok Watermark Without Losing Quality?</h2>
             <p className="text-gray-300 mb-4">
@@ -193,7 +185,6 @@ export default function BlogPost() {
             </p>
           </section>
 
-          {/* FAQ */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-red-500">FAQ</h2>
             <div className="space-y-4">
@@ -212,7 +203,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Related Articles - 内链集群 */}
           <div className="mt-12 bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 className="font-bold mb-4">Related Guides</h3>
             <div className="space-y-3">
