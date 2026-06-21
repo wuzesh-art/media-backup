@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "TikTok Download Trends in 2026: What Creators Need to Know",
     description: "Industry data on why creators are backing up their TikTok content and how platform policies are driving backup demand.",
     type: "article",
-    url: "https://www.videodownloaderai.com/blog/tiktok-downloader-statistics-2026",
+    url: "https://tiktok.gurubox.ai/blog/tiktok-downloader-statistics-2026",
     publishedTime: "2026-05-03",
   },
 };
@@ -30,7 +30,7 @@ export default function BlogPost() {
     publisher: {
       "@type": "Organization",
       name: "VideoDownloaderAI",
-      logo: { "@type": "ImageObject", url: "https://www.videodownloaderai.com/og-image.png" },
+      logo: { "@type": "ImageObject", url: "https://tiktok.gurubox.ai/og-image.png" },
     },
     datePublished: "2026-05-03",
     dateModified: "2026-05-03",
