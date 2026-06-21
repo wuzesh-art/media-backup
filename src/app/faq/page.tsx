@@ -113,7 +113,6 @@ export default function FAQPage() {
           Everything you need to know about downloading TikTok videos without watermark. Can't find your question? Email us at support@videodownloaderai.com
         </p>
 
-        {/* FAQ List - AI-optimized: direct answer first */}
         <div className="space-y-4">
           {faqs.map((faq, index) => (
             <details key={index} className="bg-gray-900/50 border border-gray-800 rounded-xl p-6 group">
@@ -122,18 +121,15 @@ export default function FAQPage() {
                 <span className="text-red-500 text-2xl group-open:rotate-180 transition-transform">+</span>
               </summary>
               <div className="mt-4 space-y-3">
-                {/* AI可直接引用的短答案 */}
                 <p className="text-white font-semibold text-base border-l-4 border-red-500 pl-4">
                   {faq.short}
                 </p>
-                {/* 详细解释 */}
                 <p className="text-gray-400 leading-relaxed">{faq.a}</p>
               </div>
             </details>
           ))}
         </div>
 
-        {/* Related Guides */}
         <div className="mt-12 bg-gray-900/30 border border-gray-800 rounded-xl p-6">
           <h3 className="font-bold mb-4">Related Guides</h3>
           <div className="space-y-2">
@@ -144,7 +140,6 @@ export default function FAQPage() {
           </div>
         </div>
 
-        {/* CTA */}
         <div className="mt-16 text-center bg-red-900/20 border border-red-800/50 rounded-xl p-8">
           <h2 className="text-2xl font-bold mb-4">Ready to Try It?</h2>
           <p className="text-gray-400 mb-6">No signup required. Paste your first TikTok link now.</p>
