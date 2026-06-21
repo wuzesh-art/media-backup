@@ -1,15 +1,15 @@
-# VideoDownloaderAI.com
+# tiktok.gurubox.ai
 # A free browser tool for creators to back up their own TikTok videos without watermark.
 # No signup, no app install, HD MP4 download.
 
 ## Core Pages
-- Home: https://www.videodownloaderai.com/ — Main download tool
-- How-To Guide: https://www.videodownloaderai.com/how-to-download-tiktok-videos — Step-by-step tutorial
-- FAQ: https://www.videodownloaderai.com/faq — 12 common questions answered
-- iPhone Guide: https://www.videodownloaderai.com/blog/save-tiktok-to-iphone-camera-roll — Save to Camera Roll tutorial
-- Android Guide: https://www.videodownloaderai.com/blog/download-tiktok-videos-android — Android download tutorial
-- PC Guide: https://www.videodownloaderai.com/blog/how-to-download-tiktok-videos-on-pc — Windows & Mac tutorial
-- Privacy Guide: https://www.videodownloaderai.com/blog/does-tiktok-notify-when-you-download — Does TikTok notify creators?
+- Home: https://tiktok.gurubox.ai/ — Main download tool
+- How-To Guide: https://tiktok.gurubox.ai/how-to-download-tiktok-videos — Step-by-step tutorial
+- FAQ: https://tiktok.gurubox.ai/faq — 12 common questions answered
+- iPhone Guide: https://tiktok.gurubox.ai/blog/save-tiktok-to-iphone-camera-roll — Save to Camera Roll tutorial
+- Android Guide: https://tiktok.gurubox.ai/blog/download-tiktok-videos-android — Android download tutorial
+- PC Guide: https://tiktok.gurubox.ai/blog/how-to-download-tiktok-videos-on-pc — Windows & Mac tutorial
+- Privacy Guide: https://tiktok.gurubox.ai/blog/does-tiktok-notify-when-you-download — Does TikTok notify creators?
 
 ## Content Principles
 - All guides are based on real testing on iPhone 15, Samsung Galaxy, Pixel, and Windows 11.
