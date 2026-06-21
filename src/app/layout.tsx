@@ -1,38 +1,43 @@
-import type { Metadata } from "next";
+import type { Metadata, Viewport } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 
-const inter = Inter({
-  subsets: ["latin"],
-  variable: "--font-inter",
-  display: "swap",
-});
+const inter = Inter({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "TikTok Video Downloader — No Watermark, HD Quality, Free",
+  title: "VideoDownloaderAI - Free TikTok Video Downloader Without Watermark",
   description:
-    "Free online TikTok video downloader. Download TikTok videos without watermark in HD quality MP4 format. No signup, no ads, unlimited downloads.",
+    "Download TikTok videos without watermark. Free, no signup, HD quality. Works on iPhone, Android, and PC. Back up your own content instantly.",
   keywords: [
     "tiktok video downloader",
-    "download tiktok videos",
-    "tiktok no watermark",
-    "tiktok mp4 download",
-    "tiktok saver",
-    "tiktok backup",
+    "download tiktok without watermark",
+    "tiktok downloader",
+    "save tiktok videos",
+    "tiktok watermark remover",
     "free tiktok downloader",
-    "online video downloader",
   ],
+  metadataBase: new URL("https://tiktok.gurubox.ai"),
   openGraph: {
-    title: "TikTok Video Downloader — No Watermark, HD Quality",
-    description:
-      "Free online tool to download TikTok videos without watermark. HD quality MP4, no signup required.",
+    title: "VideoDownloaderAI - Free TikTok Video Downloader Without Watermark",
+    description: "Download TikTok videos without watermark. Free, no signup, HD quality.",
+    url: "https://tiktok.gurubox.ai",
+    siteName: "VideoDownloaderAI",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "VideoDownloaderAI - Free TikTok Video Downloader",
+      },
+    ],
+    locale: "en_US",
     type: "website",
-    url: "https://www.videodownloaderai.com",
   },
   twitter: {
     card: "summary_large_image",
-    title: "TikTok Video Downloader",
-    description: "Download TikTok videos without watermark. Free, HD quality, no signup.",
+    title: "VideoDownloaderAI - Free TikTok Video Downloader Without Watermark",
+    description: "Download TikTok videos without watermark. Free, no signup, HD quality.",
+    images: ["/og-image.png"],
   },
   robots: {
     index: true,
@@ -46,93 +51,29 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://www.videodownloaderai.com",
+    canonical: "https://tiktok.gurubox.ai",
+  },
+  verification: {
+    google: "your-google-verification-code",
   },
 };
 
-export default function RootLayout({
-  children,
-}: Readonly<{
-  children: React.ReactNode;
-}>) {
+export const viewport: Viewport = {
+  themeColor: "#000000",
+  width: "device-width",
+  initialScale: 1,
+};
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
     <html lang="en">
       <head>
-        {/* 预连接关键域名 */}
-        <link rel="preconnect" href="https://www.videodownloaderai.com" />
-        <link rel="dns-prefetch" href="https://www.googletagmanager.com" />
-        
-        {/* Favicon & Apple Touch Icon */}
-        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png" />
         <link rel="apple-touch-icon" sizes="180x180" href="/apple-touch-icon.png" />
-        
-        {/* Open Graph / Twitter Image */}
-        <meta property="og:image" content="https://www.videodownloaderai.com/og-image.png" />
-        <meta property="og:image:width" content="1200" />
-        <meta property="og:image:height" content="630" />
-        <meta property="og:image:type" content="image/png" />
-        <meta name="twitter:image" content="https://www.videodownloaderai.com/og-image.png" />
-        
-        {/* Google Analytics - 异步加载 + 延迟 pageview */}
-        <script
-          async
-          src={`https://www.googletagmanager.com/gtag/js?id=${process.env.NEXT_PUBLIC_GA_ID || "G-8G37X5QLLC"}`}
-        />
-        <script
-          dangerouslySetInnerHTML={{
-            __html: `
-              window.dataLayer = window.dataLayer || [];
-              function gtag(){dataLayer.push(arguments);}
-              gtag('js', new Date());
-              gtag('config', '${process.env.NEXT_PUBLIC_GA_ID || "G-8G37X5QLLC"}', {
-                send_page_view: false,
-              });
-              setTimeout(() => {
-                gtag('event', 'page_view');
-              }, 3000);
-            `,
-          }}
-        />
-        
-        {/* Schema.org SoftwareApplication */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{
-            __html: JSON.stringify({
-              "@context": "https://schema.org",
-              "@type": "SoftwareApplication",
-              "name": "TikTok Video Downloader",
-              "applicationCategory": "WebApplication",
-              "operatingSystem": "Any",
-              "offers": {
-                "@type": "Offer",
-                "price": "0",
-                "priceCurrency": "USD"
-              },
-              "aggregateRating": {
-                "@type": "AggregateRating",
-                "ratingValue": "4.8",
-                "ratingCount": "10000"
-              },
-              "description": "Free online TikTok video downloader without watermark. HD quality MP4, no signup required.",
-              "url": "https://www.videodownloaderai.com",
-              "image": "https://www.videodownloaderai.com/og-image.png",
-              "author": {
-                "@type": "Organization",
-                "name": "VideoDownloderAI"
-              },
-              "featureList": [
-                "No watermark download",
-                "HD quality up to 1024p",
-                "No signup required",
-                "Mobile friendly",
-                "Direct MP4 download"
-              ]
-            })
-          }}
-        />
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon-32x32.png" />
+        <link rel="icon" type="image/png" sizes="16x16" href="/favicon-16x16.png" />
+        <link rel="manifest" href="/site.webmanifest" />
       </head>
-      <body className={`${inter.variable} font-sans antialiased bg-black text-white`}>
+      <body className={inter.className}>
         {children}
       </body>
     </html>
