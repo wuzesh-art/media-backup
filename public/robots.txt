@@ -20,4 +20,4 @@ Allow: /
 User-agent: ChatGPT-User
 Allow: /
 
-Sitemap: https://www.videodownloaderai.com/sitemap.xml
+Sitemap: https://tiktok.gurubox.ai/sitemap.xml
