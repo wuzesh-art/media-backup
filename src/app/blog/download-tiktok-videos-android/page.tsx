@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "How to Download TikTok Videos on Android Without Watermark",
     description: "Works on Samsung, Pixel, Xiaomi, Oppo. No app needed.",
     type: "article",
-    url: "https://www.videodownloaderai.com/blog/download-tiktok-videos-android",
+    url: "https://tiktok.gurubox.ai/blog/download-tiktok-videos-android",
     publishedTime: "2026-05-10",
   },
 };
@@ -30,7 +30,7 @@ export default function BlogPost() {
     publisher: {
       "@type": "Organization",
       name: "VideoDownloaderAI",
-      logo: { "@type": "ImageObject", url: "https://www.videodownloaderai.com/og-image.png" },
+      logo: { "@type": "ImageObject", url: "https://tiktok.gurubox.ai/og-image.png" },
     },
     datePublished: "2026-05-10",
     dateModified: "2026-05-10",
@@ -66,7 +66,7 @@ export default function BlogPost() {
 
           <div className="bg-red-900/20 border border-red-800/50 rounded-xl p-6 mb-8">
             <p className="text-lg">
-              <strong>Short answer:</strong> Copy the TikTok link → open Chrome → paste into <a href="/" className="text-red-500 underline">VideoDownloaderAI.com</a> → download MP4 → find it in <strong>Downloads</strong> or <strong>Files</strong> app. Works on Samsung, Pixel, Xiaomi, Oppo, OnePlus.
+              <strong>Short answer:</strong> Copy the TikTok link → open Chrome → paste into <a href="/" className="text-red-500 underline">VideoDownloaderAI</a> → download MP4 → find it in <strong>Downloads</strong> or <strong>Files</strong> app. Works on Samsung, Pixel, Xiaomi, Oppo, OnePlus.
             </p>
           </div>
 
@@ -96,7 +96,7 @@ export default function BlogPost() {
                   <div className="w-10 h-10 bg-red-600 rounded-full flex items-center justify-center font-bold shrink-0">2</div>
                   <div>
                     <h3 className="font-semibold text-lg mb-2">Open Chrome & Paste</h3>
-                    <p className="text-gray-400 mb-3">Open <strong>Chrome</strong> (Samsung Internet also works). Go to <a href="/" className="text-red-500 underline">VideoDownloaderAI.com</a>.</p>
+                    <p className="text-gray-400 mb-3">Open <strong>Chrome</strong> (Samsung Internet also works). Go to <a href="/" className="text-red-500 underline">VideoDownloaderAI</a>.</p>
                     <p className="text-gray-400">Paste the link, tap <strong>Analyze</strong>. Wait 2-3 seconds.</p>
                   </div>
                 </div>
