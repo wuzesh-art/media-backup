@@ -30,21 +30,21 @@ export default function HowToPage() {
         "position": 1,
         "name": "Copy the TikTok Video Link",
         "text": "Open TikTok app or website, find the video you want, tap the Share button, then tap Copy Link.",
-        "url": "https://www.videodownloaderai.com/how-to-download-tiktok-videos#step1"
+        "url": "https://tiktok.gurubox.ai/how-to-download-tiktok-videos#step1"
       },
       {
         "@type": "HowToStep",
         "position": 2,
         "name": "Paste Link and Analyze",
         "text": "Go to VideoDownloderAI.com, paste the copied link in the input box, and click Analyze & Backup.",
-        "url": "https://www.videodownloaderai.com/how-to-download-tiktok-videos#step2"
+        "url": "https://tiktok.gurubox.ai/how-to-download-tiktok-videos#step2"
       },
       {
         "@type": "HowToStep",
         "position": 3,
         "name": "Select Quality and Download",
         "text": "Choose 1024p or 1280p for HD quality, click Start Backup, then click Download File to save the MP4.",
-        "url": "https://www.videodownloaderai.com/how-to-download-tiktok-videos#step3"
+        "url": "https://tiktok.gurubox.ai/how-to-download-tiktok-videos#step3"
       }
     ]
   };
