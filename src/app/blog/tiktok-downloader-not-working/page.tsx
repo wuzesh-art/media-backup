@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "TikTok Downloader Not Working? 12 Fixes (2026)",
     description: "Fix common download errors, broken links, slow speeds, and playback issues.",
     type: "article",
-    url: "https://www.videodownloaderai.com/blog/tiktok-downloader-not-working",
+    url: "https://tiktok.gurubox.ai/blog/tiktok-downloader-not-working",
     publishedTime: "2026-05-12",
   },
 };
@@ -30,7 +30,7 @@ export default function BlogPost() {
     publisher: {
       "@type": "Organization",
       name: "VideoDownloaderAI",
-      logo: { "@type": "ImageObject", url: "https://www.videodownloaderai.com/og-image.png" },
+      logo: { "@type": "ImageObject", url: "https://tiktok.gurubox.ai/og-image.png" },
     },
     datePublished: "2026-05-12",
     dateModified: "2026-05-12",
@@ -60,7 +60,7 @@ export default function BlogPost() {
     {
       title: "iPhone: Can't save to Photos / 'Save to Photos' missing",
       short: "Use Safari (not Chrome). Tap Edit Actions in the Share sheet to add 'Save to Photos'.",
-      detail: "Chrome on iOS downloads files to its own sandboxed folder, making it hard to move to Photos. Safari integrates with iOS directly. If 'Save to Photos' is missing: tap Share → scroll down → Edit Actions → tap the green + next to 'Save to Photos' → Done. Full iPhone guide: https://www.videodownloaderai.com/blog/save-tiktok-to-iphone-camera-roll"
+      detail: "Chrome on iOS downloads files to its own sandboxed folder, making it hard to move to Photos. Safari integrates with iOS directly. If 'Save to Photos' is missing: tap Share → scroll down → Edit Actions → tap the green + next to 'Save to Photos' → Done. Full iPhone guide: https://tiktok.gurubox.ai/blog/save-tiktok-to-iphone-camera-roll"
     },
     {
       title: "Android: Can't find the downloaded file",
@@ -80,7 +80,7 @@ export default function BlogPost() {
     {
       title: "Website won't load at all",
       short: "Check your DNS or try a VPN. Some countries block video downloader domains.",
-      detail: "If videodownloaderai.com doesn't load: (1) Check your internet connection. (2) Try a different browser. (3) Disable ad-blockers (some aggressive blockers flag download tools). (4) If in a country with strict internet filtering, try a VPN set to US/EU. (5) Ensure your system time is correct (HTTPS errors occur with wrong time)."
+      detail: "If tiktok.gurubox.ai doesn't load: (1) Check your internet connection. (2) Try a different browser. (3) Disable ad-blockers (some aggressive blockers flag download tools). (4) If in a country with strict internet filtering, try a VPN set to US/EU. (5) Ensure your system time is correct (HTTPS errors occur with wrong time)."
     },
     {
       title: "Only low resolution available (360p/480p)",
@@ -129,7 +129,7 @@ export default function BlogPost() {
 
           <div className="bg-red-900/20 border border-red-800/50 rounded-xl p-6 mb-8">
             <p className="text-lg">
-              <strong>Quick diagnosis:</strong> If VideoDownloaderAI.com isn't working for you, 90% of issues are caused by private videos, wrong URLs, browser cache, or network problems. Scroll to your specific error below.
+              <strong>Quick diagnosis:</strong> If VideoDownloaderAI isn't working for you, 90% of issues are caused by private videos, wrong URLs, browser cache, or network problems. Scroll to your specific error below.
             </p>
           </div>
 
