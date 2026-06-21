@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "How to Remove TikTok Watermark on iPhone: 3 Methods",
     description: "Online tool, Photos crop, or CapCut. Free, no app install needed.",
     type: "article",
-    url: "https://www.videodownloaderai.com/blog/remove-tiktok-watermark-on-iphone",
+    url: "https://tiktok.gurubox.ai/blog/remove-tiktok-watermark-on-iphone",
     publishedTime: "2026-05-23",
   },
 };
@@ -30,7 +30,7 @@ export default function BlogPost() {
     publisher: {
       "@type": "Organization",
       name: "VideoDownloaderAI",
-      logo: { "@type": "ImageObject", url: "https://www.videodownloaderai.com/og-image.png" },
+      logo: { "@type": "ImageObject", url: "https://tiktok.gurubox.ai/og-image.png" },
     },
     datePublished: "2026-05-23",
     dateModified: "2026-05-23",
@@ -76,7 +76,6 @@ export default function BlogPost() {
             </p>
           </div>
 
-          {/* Method 1 */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Method 1: Online Tool (Best Quality, No App)</h2>
             <p className="text-gray-300 mb-4">
@@ -85,7 +84,7 @@ export default function BlogPost() {
             <ol className="space-y-3 text-gray-300 list-decimal list-inside">
               <li>Open TikTok app, tap <strong>Share</strong> → <strong>Copy Link</strong></li>
               <li>Open <strong>Safari</strong> (not Chrome — Safari integrates with iOS Photos)</li>
-              <li>Go to <a href="/" className="text-red-500 underline">VideoDownloaderAI.com</a></li>
+              <li>Go to <a href="/" className="text-red-500 underline">VideoDownloaderAI</a></li>
               <li>Paste the link, tap <strong>Analyze</strong></li>
               <li>Select <strong>1024p</strong>, tap <strong>Download File</strong></li>
               <li>Tap the download icon in Safari toolbar → tap the file → <strong>Share → Save to Photos</strong></li>
@@ -97,7 +96,6 @@ export default function BlogPost() {
             </div>
           </section>
 
-          {/* Method 2 */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Method 2: Crop with Photos App (Free, Built-in)</h2>
             <p className="text-gray-300 mb-4">
@@ -114,7 +112,6 @@ export default function BlogPost() {
             </p>
           </section>
 
-          {/* Method 3 */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Method 3: CapCut (Free Editing App)</h2>
             <p className="text-gray-300 mb-4">
@@ -129,7 +126,6 @@ export default function BlogPost() {
             </ol>
           </section>
 
-          {/* Comparison */}
           <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-red-500">Comparison: Which Method Is Best?</h2>
             <table className="w-full text-left border border-gray-800 rounded-xl">
