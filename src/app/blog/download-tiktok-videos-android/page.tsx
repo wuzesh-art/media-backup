@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "How to Download TikTok Videos on Android Without Watermark",
     description: "Works on Samsung, Pixel, Xiaomi, Oppo. No app needed.",
     type: "article",
-    url: "https://tiktok.gurubox.ai/blog/download-tiktok-videos-android",
+    url: "https://short.videodownloaderai.com/blog/download-tiktok-videos-android",
     publishedTime: "2026-05-10",
   },
 };
@@ -30,7 +30,7 @@ export default function BlogPost() {
     publisher: {
       "@type": "Organization",
       name: "VideoDownloaderAI",
-      logo: { "@type": "ImageObject", url: "https://tiktok.gurubox.ai/og-image.png" },
+      logo: { "@type": "ImageObject", url: "https://short.videodownloaderai.com/og-image.png" },
     },
     datePublished: "2026-05-10",
     dateModified: "2026-05-10",
