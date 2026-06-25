@@ -16,11 +16,11 @@ export const metadata: Metadata = {
     "tiktok watermark remover",
     "free tiktok downloader",
   ],
-  metadataBase: new URL("https://tiktok.gurubox.ai"),
+  metadataBase: new URL("https://short.videodownloaderai.com"),
   openGraph: {
     title: "VideoDownloaderAI - Free TikTok Video Downloader Without Watermark",
     description: "Download TikTok videos without watermark. Free, no signup, HD quality.",
-    url: "https://tiktok.gurubox.ai",
+    url: "https://short.videodownloaderai.com",
     siteName: "VideoDownloaderAI",
     images: [
       {
@@ -51,7 +51,7 @@ export const metadata: Metadata = {
     },
   },
   alternates: {
-    canonical: "https://tiktok.gurubox.ai",
+    canonical: "https://short.videodownloaderai.com",
   },
   verification: {
     google: "your-google-verification-code",
