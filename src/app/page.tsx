@@ -188,7 +188,7 @@ export default function Home() {
 
       {/* Footer */}
       <footer className="mt-20 pt-8 border-t border-gray-800 text-center text-gray-400 text-sm">
-        <p>tiktok.gurubox.ai — Free TikTok Video Backup Tool</p>
+        <p>short.videodownloaderai.com — Free TikTok Video Backup Tool</p>
         <p className="mt-2">Not affiliated with TikTok. For personal use only. Respect creators' rights.</p>
         <div className="mt-4 flex justify-center gap-4 text-xs">
           <a href="/about" className="hover:text-white transition-colors">About</a>
