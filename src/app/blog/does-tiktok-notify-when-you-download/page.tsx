@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Does TikTok Notify When You Download? (2026 Truth)",
     description: "The complete privacy breakdown: what TikTok tracks and what it doesn't.",
     type: "article",
-    url: "https://tiktok.gurubox.ai/blog/does-tiktok-notify-when-you-download",
+    url: "https://short.videodownloaderai.com/blog/does-tiktok-notify-when-you-download",
     publishedTime: "2026-05-03",
   },
 };
