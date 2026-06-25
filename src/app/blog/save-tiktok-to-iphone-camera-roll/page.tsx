@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "Save TikTok Videos to iPhone Camera Roll Without Watermark",
     description: "No app needed. Works in Safari. Save directly to Photos app.",
     type: "article",
-    url: "https://tiktok.gurubox.ai/blog/save-tiktok-to-iphone-camera-roll",
+    url: "https://short.videodownloaderai.com/blog/save-tiktok-to-iphone-camera-roll",
     publishedTime: "2026-05-07",
   },
 };
@@ -35,7 +35,7 @@ export default function BlogPost() {
       "name": "VideoDownloderAI",
       "logo": {
         "@type": "ImageObject",
-        "url": "https://tiktok.gurubox.ai/og-image.png"
+        "url": "https://short.videodownloaderai.com/og-image.png"
       }
     },
     "datePublished": "2026-05-07",
