@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "How to Remove TikTok Watermark Free Online: 5 Easy Methods",
     description: "5 proven ways to remove TikTok watermark. Online tool, iPhone, Android, cropping, and saved videos. Free, no signup.",
     type: "article",
-    url: "https://tiktok.gurubox.ai/blog/remove-tiktok-watermark",
+    url: "https://short.videodownloaderai.com/blog/remove-tiktok-watermark",
     publishedTime: "2026-05-03",
   },
 };
@@ -30,7 +30,7 @@ export default function BlogPost() {
     publisher: {
       "@type": "Organization",
       name: "VideoDownloaderAI",
-      logo: { "@type": "ImageObject", url: "https://tiktok.gurubox.ai/og-image.png" },
+      logo: { "@type": "ImageObject", url: "https://short.videodownloaderai.com/og-image.png" },
     },
     datePublished: "2026-05-03",
     dateModified: "2026-05-23",
