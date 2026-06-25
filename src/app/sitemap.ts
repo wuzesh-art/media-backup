@@ -23,7 +23,7 @@ const routes = [
 
 export default function sitemap(): MetadataRoute.Sitemap {
   return routes.map((route) => ({
-    url: `https://tiktok.gurubox.ai${route.path}`,
+    url: `https://short.videodownloaderai.com${route.path}`,
     lastModified: new Date(),
     changeFrequency: route.freq,
     priority: route.priority,
