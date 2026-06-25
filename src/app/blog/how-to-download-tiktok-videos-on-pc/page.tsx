@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "How to Download TikTok Videos on PC Without Watermark",
     description: "Free guide for Windows and Mac. No software installation needed.",
     type: "article",
-    url: "https://tiktok.gurubox.ai/blog/how-to-download-tiktok-videos-on-pc",
+    url: "https://short.videodownloaderai.com/blog/how-to-download-tiktok-videos-on-pc",
     publishedTime: "2026-05-03",
   },
 };
