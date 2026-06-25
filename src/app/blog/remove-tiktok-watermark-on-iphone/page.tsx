@@ -16,7 +16,7 @@ export const metadata: Metadata = {
     title: "How to Remove TikTok Watermark on iPhone: 3 Methods",
     description: "Online tool, Photos crop, or CapCut. Free, no app install needed.",
     type: "article",
-    url: "https://tiktok.gurubox.ai/blog/remove-tiktok-watermark-on-iphone",
+    url: "https://short.videodownloaderai.com/blog/remove-tiktok-watermark-on-iphone",
     publishedTime: "2026-05-23",
   },
 };
@@ -30,7 +30,7 @@ export default function BlogPost() {
     publisher: {
       "@type": "Organization",
       name: "VideoDownloaderAI",
-      logo: { "@type": "ImageObject", url: "https://tiktok.gurubox.ai/og-image.png" },
+      logo: { "@type": "ImageObject", url: "https://short.videodownloaderai.com/og-image.png" },
     },
     datePublished: "2026-05-23",
     dateModified: "2026-05-23",
