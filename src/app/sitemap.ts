@@ -19,6 +19,11 @@ const routes = [
   { path: "/blog/download-tiktok-videos-android", priority: 0.7, freq: "monthly" as const },
   { path: "/blog/tiktok-downloader-not-working", priority: 0.8, freq: "monthly" as const },
   { path: "/blog/remove-tiktok-watermark-on-iphone", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/download-tiktok-slideshow", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/download-tiktok-sounds", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/repost-tiktok-to-instagram-reels", priority: 0.8, freq: "weekly" as const },
+  { path: "/blog/tiktok-video-blurry-fix", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/save-tiktok-before-deleting-account", priority: 0.8, freq: "weekly" as const },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
