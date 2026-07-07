@@ -183,6 +183,7 @@ export default function BlogPost() {
           <div className="border-t border-gray-800 pt-8">
             <p className="text-gray-500 mb-4">More iPhone guides:</p>
             <div className="flex gap-4 text-sm">
+              <a href="/tiktok-watermark-remover" className="block text-red-500 hover:text-red-400">TikTok Watermark Remover (Free Tool) →</a>
               <a href="/how-to-download-tiktok-videos" className="text-red-500 hover:text-red-400 underline">General Download Guide</a>
               <a href="/faq" className="text-red-500 hover:text-red-400 underline">Full FAQ</a>
             </div>
