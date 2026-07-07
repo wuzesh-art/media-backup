@@ -95,7 +95,7 @@ export default function BlogPost() {
             </div>
             
             <div className="mt-4 bg-red-900/20 border border-red-800/50 rounded-lg p-4 text-center">
-              <a href="/tiktok-watermark-remover" className="inline-block bg-red-600 hover:bg-red-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
+              <a href="/blog/tiktok-watermark-remover" className="inline-block bg-red-600 hover:bg-red-500 text-white font-semibold px-6 py-3 rounded-lg transition-colors">
                 Remove Watermark Now →
               </a>
             </div>
@@ -213,7 +213,7 @@ export default function BlogPost() {
           <div className="mt-12 bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 className="font-bold mb-4">Related Guides</h3>
             <div className="space-y-3">
-              <a href="/tiktok-watermark-remover" className="block text-red-500 hover:text-red-400">🛠️ TikTok Watermark Remover (Free Tool) →</a>
+              <a href="/blog/tiktok-watermark-remover" className="block text-red-500 hover:text-red-400">🛠️ TikTok Watermark Remover (Free Tool) →</a>
               <a href="/blog/save-tiktok-to-iphone-camera-roll" className="block text-red-500 hover:text-red-400">📱 Remove Watermark on iPhone →</a>
               <a href="/blog/download-tiktok-videos-android" className="block text-red-500 hover:text-red-400">🤖 Remove Watermark on Android →</a>
               <a href="/blog/how-to-download-tiktok-videos-on-pc" className="block text-red-500 hover:text-red-400">💻 Remove Watermark on PC →</a>
