@@ -24,7 +24,7 @@ const routes = [
   { path: "/blog/repost-tiktok-to-instagram-reels", priority: 0.8, freq: "weekly" as const },
   { path: "/blog/tiktok-video-blurry-fix", priority: 0.7, freq: "monthly" as const },
   { path: "/blog/save-tiktok-before-deleting-account", priority: 0.8, freq: "weekly" as const },
-  { path: "/tiktok-watermark-remover", priority: 1.0, freq: "daily" as const },
+  { path: "/blog/tiktok-watermark-remover", priority: 1.0, freq: "daily" as const },
   { path: "/blog/remove-tiktok-watermark-without-link", priority: 0.8, freq: "monthly" as const },
 ] as const;
 
