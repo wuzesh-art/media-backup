@@ -133,6 +133,7 @@ export default function FAQPage() {
         <div className="mt-12 bg-gray-900/30 border border-gray-800 rounded-xl p-6">
           <h3 className="font-bold mb-4">Related Guides</h3>
           <div className="space-y-2">
+            <a href="/tiktok-watermark-remover" className="block text-red-500 hover:text-red-400">TikTok Watermark Remover (Free Tool) →</a>
             <a href="/how-to-download-tiktok-videos" className="block text-red-500 hover:text-red-400">Step-by-Step Download Guide →</a>
             <a href="/blog/how-to-download-tiktok-videos-on-pc" className="block text-red-500 hover:text-red-400">PC Download Tutorial →</a>
             <a href="/blog/does-tiktok-notify-when-you-download" className="block text-red-500 hover:text-red-400">Privacy & Safety FAQ →</a>
