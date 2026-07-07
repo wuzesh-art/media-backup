@@ -171,7 +171,7 @@ export default function BlogPost() {
           <div className="border-t border-gray-800 pt-8">
             <p className="text-gray-500 mb-4">More guides:</p>
             <div className="flex flex-wrap gap-4 text-sm">
-              <a href="/tiktok-watermark-remover" className="text-red-500 hover:text-red-400 underline">TikTok Watermark Remover</a>
+              <a href="/blog/tiktok-watermark-remover" className="text-red-500 hover:text-red-400 underline">TikTok Watermark Remover</a>
               <a href="/blog/remove-tiktok-watermark" className="text-red-500 hover:text-red-400 underline">5 Methods to Remove Watermark</a>
               <a href="/blog/download-tiktok-videos-android" className="text-red-500 hover:text-red-400 underline">Android Guide</a>
               <a href="/faq" className="text-red-500 hover:text-red-400 underline">FAQ</a>
