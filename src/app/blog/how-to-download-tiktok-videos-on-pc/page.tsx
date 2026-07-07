@@ -92,6 +92,7 @@ export default function BlogPost() {
 
           <div className="bg-red-900/20 border border-red-800/50 rounded-xl p-8 text-center mb-12">
             <h2 className="text-2xl font-bold mb-4">Download Your First TikTok on PC</h2>
+            <a href="/tiktok-watermark-remover" className="block text-red-500 hover:text-red-400">🛠️ TikTok Watermark Remover (Free Tool) →</a>
             <a href="/" className="inline-block bg-red-600 hover:bg-red-500 text-white font-semibold px-8 py-4 rounded-lg transition-colors">
               Start Downloading →
             </a>
