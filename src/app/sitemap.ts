@@ -27,6 +27,8 @@ const routes = [
   { path: "/blog/tiktok-watermark-remover", priority: 1.0, freq: "daily" as const },
   { path: "/blog/remove-tiktok-watermark-without-link", priority: 0.8, freq: "monthly" as const },
   { path: "/blog/tiktok-video-size-format", priority: 0.6, freq: "monthly" as const },
+  { path: "/blog/does-tiktok-notify-screenshot", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/download-tiktok-drafts", priority: 0.7, freq: "monthly" as const },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
