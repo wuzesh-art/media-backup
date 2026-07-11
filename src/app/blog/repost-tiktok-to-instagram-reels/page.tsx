@@ -3,8 +3,8 @@
 import type { Metadata } from "next";
 
 export const metadata: Metadata = {
-  title: "How to Repost TikTok Videos to Instagram Reels Without Watermark (2026)",
-  description: "Step-by-step guide to repost TikTok videos to Instagram Reels without watermark. Avoid shadowban, keep HD quality. Free tool.",
+  title: "Repost TikTok to Instagram Reels Without Watermark: 4-Step Guide (2026)",
+  description: "Avoid shadowban and boost reach. Download clean HD video, upload to Reels with new caption. 60-second workflow. Free tool.",
   keywords: [
     "repost tiktok to instagram reels",
     "remove tiktok watermark for instagram",
@@ -13,7 +13,7 @@ export const metadata: Metadata = {
     "tiktok to reels",
   ],
   openGraph: {
-    title: "How to Repost TikTok Videos to Instagram Reels Without Watermark",
+    title: "Repost TikTok to Instagram Reels Without Watermark: 4-Step Guide (2026)",
     description: "Avoid shadowban, keep HD quality. The exact 60-second workflow.",
     type: "article",
     url: "https://short.videodownloaderai.com/blog/repost-tiktok-to-instagram-reels",
