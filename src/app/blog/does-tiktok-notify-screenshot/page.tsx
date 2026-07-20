@@ -43,6 +43,42 @@ export default function BlogPost() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(articleSchema) }}
       />
 
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{
+          __html: JSON.stringify({
+            "@context": "https://schema.org",
+            "@type": "FAQPage",
+            mainEntity: [
+              {
+                "@type": "Question",
+                name: "Does TikTok notify when you screenshot a video?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. TikTok does not notify creators when you screenshot their videos, profiles, stories, or direct messages. Unlike Snapchat, TikTok has no screenshot detection system.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Can someone tell if you screenshot their TikTok story?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. TikTok Stories also do not send screenshot notifications. The creator only sees who viewed their story, not who screenshot it.",
+                },
+              },
+              {
+                "@type": "Question",
+                name: "Does TikTok notify when you screen record?",
+                acceptedAnswer: {
+                  "@type": "Answer",
+                  text: "No. TikTok does not detect or notify screen recordings. However, screen recordings are lower quality than downloading the original video file.",
+                },
+              },
+            ],
+          }),
+        }}
+      />
+
       <div className="container mx-auto px-4 py-16 max-w-3xl">
         <nav className="text-sm text-gray-500 mb-8">
           <a href="/" className="hover:text-white">Home</a>
