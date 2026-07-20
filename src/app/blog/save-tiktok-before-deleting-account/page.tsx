@@ -217,6 +217,7 @@ export default function BlogPost() {
               <a href="/blog/repost-tiktok-to-instagram-reels" className="block text-red-500 hover:text-red-400">Repost to Instagram Reels →</a>
               <a href="/blog/download-tiktok-sounds" className="block text-red-500 hover:text-red-400">Download TikTok Sounds →</a>
               <a href="/faq" className="block text-red-500 hover:text-red-400">Full FAQ →</a>
+              <a href="/blog/does-tiktok-notify-screenshot" className="block text-red-500 hover:text-red-400">Does TikTok Notify Screenshots? →</a>
             </div>
           </div>
 
