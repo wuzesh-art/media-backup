@@ -29,6 +29,7 @@ const routes = [
   { path: "/blog/tiktok-video-size-format", priority: 0.6, freq: "monthly" as const },
   { path: "/blog/does-tiktok-notify-screenshot", priority: 0.7, freq: "monthly" as const },
   { path: "/blog/download-tiktok-drafts", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/tiktok-privacy-guide-complete", priority: 0.8, freq: "weekly" as const },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
