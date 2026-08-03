@@ -244,7 +244,7 @@ export function HomeClient() {
           {isAnalyzing ? (
             <><Loader2 className="w-5 h-5 animate-spin" />Analyzing...</>
           ) : (
-            "Analyze & Backup"
+            "Download Video"
           )}
         </button>
       </div>
