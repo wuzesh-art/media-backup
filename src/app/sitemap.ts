@@ -35,7 +35,7 @@ const routes = [
   { path: "/blog/tiktok-download-only-576p", priority: 0.7, freq: "monthly" as const },
   { path: "/blog/download-tiktok-audio-mp3", priority: 0.7, freq: "monthly" as const },
   { path: "/blog/download-tiktok-videos-desktop", priority: 0.7, freq: "monthly" as const },
-  { path: "/how-we-test", priority: 0.4, freq: "monthly" as const },
+  { path: "/blog/how-we-test", priority: 0.4, freq: "monthly" as const },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
