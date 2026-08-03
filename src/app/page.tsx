@@ -33,7 +33,7 @@ export default function Home() {
         {/* Hero Section - 重定位 */}
         <div className="text-center mb-16">
           <h1 className="text-4xl md:text-6xl font-bold mb-6 tracking-tight leading-tight">
-            Download and Back Up Your Own TikTok Videos Without Watermark
+            TikTok Video Downloader — Download Your Own Videos Without Watermark
           </h1>
           <p className="text-xl text-gray-400 max-w-3xl mx-auto mb-4">
             Save your own TikTok videos in HD MP4 for editing, reposting to your own channels, or offline backup. No signup required.
