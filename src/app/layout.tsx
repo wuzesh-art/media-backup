@@ -50,9 +50,6 @@ export const metadata: Metadata = {
       "max-snippet": -1,
     },
   },
-  alternates: {
-    canonical: "https://short.videodownloaderai.com",
-  },
   verification: {
     google: "your-google-verification-code",
   },
