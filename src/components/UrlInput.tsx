@@ -37,7 +37,7 @@ export function UrlInput({ value, onChange, error }: UrlInputProps) {
           type="url"
           value={value}
           onChange={(e) => onChange(e.target.value)}
-          placeholder="Paste video link from YouTube, TikTok, Instagram, Twitter, Facebook, Vimeo, Dailymotion, Reddit..."
+          placeholder="Paste a TikTok video link here..."
           className="w-full h-14 md:h-16 bg-transparent text-white placeholder-zinc-500 px-4 pr-12 text-base md:text-lg outline-none rounded-xl"
           aria-label="Video URL input"
         />
