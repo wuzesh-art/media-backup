@@ -194,7 +194,7 @@ export default function Home() {
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-4">2</div>
               <h3 className="font-semibold mb-2">Paste URL</h3>
-              <p className="text-gray-400 text-sm">Paste the link in the box above and click Analyze</p>
+              <p className="text-gray-400 text-sm">Paste the link in the box above and click Download Video</p>
             </div>
             <div className="flex flex-col items-center">
               <div className="w-16 h-16 bg-red-600 rounded-full flex items-center justify-center text-2xl font-bold mb-4">3</div>
