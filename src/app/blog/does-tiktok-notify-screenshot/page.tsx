@@ -183,6 +183,9 @@ export default function BlogPost() {
             <p className="text-gray-300">
               One important distinction: the creator <em>can</em> see a list of who <strong>viewed</strong> their story. So while your screenshot itself is invisible, simply opening the story does put your name on the viewer list. There is no documented way to view a story anonymously within the app.
             </p>
+            <p className="text-gray-500 text-sm mt-4">
+              Full guide: <a href="/blog/does-tiktok-notify-screenshot-story" className="text-red-500 underline">Does TikTok Notify Story Screenshots? →</a>
+            </p>
           </section>
 
           <section className="mb-12">
@@ -192,6 +195,9 @@ export default function BlogPost() {
             </p>
             <p className="text-gray-300">
               Keep in mind that <strong>read receipts</strong> are a separate feature: if both users have them enabled, the sender can see that you opened their message — but that has nothing to do with screenshots.
+            </p>
+            <p className="text-gray-500 text-sm mt-4">
+              Full guide: <a href="/blog/does-tiktok-notify-screenshot-dms" className="text-red-500 underline">Does TikTok Notify DM Screenshots? →</a>
             </p>
           </section>
 
