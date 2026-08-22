@@ -36,6 +36,9 @@ const routes = [
   { path: "/blog/download-tiktok-audio-mp3", priority: 0.7, freq: "monthly" as const },
   { path: "/blog/download-tiktok-videos-desktop", priority: 0.7, freq: "monthly" as const },
   { path: "/blog/how-we-test", priority: 0.4, freq: "monthly" as const },
+  { path: "/blog/if-i-deactivate-tiktok-will-i-lose-my-drafts", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/does-tiktok-notify-screenshot-story", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/does-tiktok-notify-screenshot-dms", priority: 0.7, freq: "monthly" as const },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
