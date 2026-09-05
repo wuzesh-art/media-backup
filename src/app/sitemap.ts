@@ -39,6 +39,8 @@ const routes = [
   { path: "/blog/if-i-deactivate-tiktok-will-i-lose-my-drafts", priority: 0.7, freq: "monthly" as const },
   { path: "/blog/does-tiktok-notify-screenshot-story", priority: 0.7, freq: "monthly" as const },
   { path: "/blog/does-tiktok-notify-screenshot-dms", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/if-i-delete-tiktok-will-i-lose-my-drafts", priority: 0.7, freq: "monthly" as const },
+  { path: "/blog/does-instagram-notify-screenshots", priority: 0.7, freq: "monthly" as const },
 ] as const;
 
 export default function sitemap(): MetadataRoute.Sitemap {
