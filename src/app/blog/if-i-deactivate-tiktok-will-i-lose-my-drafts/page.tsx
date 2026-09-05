@@ -193,6 +193,7 @@ export default function BlogPost() {
           <div className="mt-12 bg-gray-900/30 border border-gray-800 rounded-xl p-6">
             <h3 className="font-bold mb-4">Related Guides</h3>
             <div className="space-y-3">
+              <a href="/blog/if-i-delete-tiktok-will-i-lose-my-drafts" className="block text-red-500 hover:text-red-400">If I Delete TikTok, Will I Lose My Drafts? →</a>
               <a href="/blog/save-tiktok-before-deleting-account" className="block text-red-500 hover:text-red-400">Back Up Everything Before Deleting Your Account →</a>
               <a href="/blog/download-all-tiktok-videos" className="block text-red-500 hover:text-red-400">How to Download All Your TikTok Videos →</a>
               <a href="/blog/tiktok-privacy-guide-complete" className="block text-red-500 hover:text-red-400">Complete TikTok Privacy Guide →</a>
