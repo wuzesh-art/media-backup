@@ -4,7 +4,7 @@ import type { Metadata } from "next";
 
 export const metadata: Metadata = {
   title: "If I Deactivate TikTok, Will I Lose My Drafts? (2026 Answer)",
-  description: "Deactivating TikTok does not delete your drafts — they are stored on your phone, not TikTok's servers. But uninstalling the app does erase them. Verified August 2026.",
+  description: "No — deactivating TikTok won't delete your drafts (they live on your phone). But uninstalling the app will. Here's exactly what's safe and what erases drafts. Verified 2026.",
   keywords: [
     "if i deactivate tiktok will i lose my drafts",
     "does uninstalling tiktok delete drafts",
