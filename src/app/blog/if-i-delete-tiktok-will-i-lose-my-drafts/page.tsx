@@ -183,6 +183,7 @@ export default function BlogPost() {
             <p className="text-gray-300">
               One caveat: some users have reported drafts going missing after offloading and reinstalling. Since there's no guaranteed behavior, treat offloading the same as uninstalling for anything you can't afford to lose — save it first.
             </p>
+            <p className="text-gray-500 text-sm mt-4">Full iPhone guide: <a href="/blog/if-i-offload-tiktok-will-i-lose-my-drafts" className="text-red-500 underline">If I Offload TikTok, Will I Lose My Drafts? →</a></p>
           </section>
 
           <section className="mb-12">
@@ -196,7 +197,7 @@ export default function BlogPost() {
           </section>
 
           <section className="mb-12">
-            <h2 className="text-2xl font-bold mb-4 text-red-500">How to Save Your Drafts Before Deleting the App</h2>
+            <h2 className="text-2xl font-bold mb-4 text-red-500">How to Delete TikTok Without Losing Your Drafts</h2>
             <ol className="space-y-3 text-gray-300">
               <li><strong>1. Save each draft to your camera roll</strong> — open the draft, proceed to the post screen, and tap "Save to device" before anything else.</li>
               <li><strong>2. Back up your posted videos too</strong> — if you're deleting TikTok entirely, use <a href="/" className="text-red-500 underline">VideoDownloaderAI</a> to download your own published videos in HD without watermark.</li>
