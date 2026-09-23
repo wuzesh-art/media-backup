@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     "tiktok picture downloader",
   ],
   alternates: {
-    canonical: "https://short.videodownloaderai.com/tiktok-photo-downloader",
+    canonical: "https://short.videodownloaderai.com/blog/tiktok-photo-downloader",
   },
   openGraph: {
     title: "TikTok Photo Downloader — Photo Mode & Slideshows",
     description: "Paste a TikTok photo post link, save the images. No signup, no login.",
     type: "website",
-    url: "https://short.videodownloaderai.com/tiktok-photo-downloader",
+    url: "https://short.videodownloaderai.com/blog/tiktok-photo-downloader",
   },
 };
 
@@ -154,7 +154,7 @@ export default function TikTokPhotoDownloader() {
         <div className="mt-12 bg-gray-900/30 border border-gray-800 rounded-xl p-6">
           <h3 className="font-bold mb-4">Related Guides</h3>
           <div className="space-y-3">
-            <a href="/tiktok-to-mp3" className="block text-red-500 hover:text-red-400">TikTok to MP3 — Audio Downloader →</a>
+            <a href="/blog/tiktok-to-mp3" className="block text-red-500 hover:text-red-400">TikTok to MP3 — Audio Downloader →</a>
             <a href="/blog/best-tiktok-downloaders" className="block text-red-500 hover:text-red-400">5 Best TikTok Downloaders (2026 Tested) →</a>
             <a href="/blog/remove-tiktok-watermark" className="block text-red-500 hover:text-red-400">How to Remove the TikTok Watermark →</a>
             <a href="/" className="block text-red-500 hover:text-red-400">TikTok Video Downloader (Home) →</a>
