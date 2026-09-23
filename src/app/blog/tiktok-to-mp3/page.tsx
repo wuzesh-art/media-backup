@@ -15,13 +15,13 @@ export const metadata: Metadata = {
     "save tiktok sound as mp3",
   ],
   alternates: {
-    canonical: "https://short.videodownloaderai.com/tiktok-to-mp3",
+    canonical: "https://short.videodownloaderai.com/blog/tiktok-to-mp3",
   },
   openGraph: {
     title: "TikTok to MP3 — Free TikTok Audio Downloader",
     description: "Paste a TikTok link, get the audio as MP3. No signup, no login.",
     type: "website",
-    url: "https://short.videodownloaderai.com/tiktok-to-mp3",
+    url: "https://short.videodownloaderai.com/blog/tiktok-to-mp3",
   },
 };
 
@@ -149,7 +149,7 @@ export default function TikTokToMP3() {
           <h3 className="font-bold mb-4">Related Guides</h3>
           <div className="space-y-3">
             <a href="/blog/download-tiktok-sounds" className="block text-red-500 hover:text-red-400">How to Download TikTok Sounds (Full Guide) →</a>
-            <a href="/tiktok-photo-downloader" className="block text-red-500 hover:text-red-400">TikTok Photo Downloader →</a>
+            <a href="/blog/tiktok-photo-downloader" className="block text-red-500 hover:text-red-400">TikTok Photo Downloader →</a>
             <a href="/blog/best-tiktok-downloaders" className="block text-red-500 hover:text-red-400">5 Best TikTok Downloaders (2026 Tested) →</a>
             <a href="/" className="block text-red-500 hover:text-red-400">TikTok Video Downloader (Home) →</a>
           </div>
