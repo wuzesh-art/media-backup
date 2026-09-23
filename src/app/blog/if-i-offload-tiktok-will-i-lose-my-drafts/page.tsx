@@ -155,6 +155,20 @@ export default function BlogPost() {
           </section>
 
           <section className="mb-12">
+            <h2 className="text-2xl font-bold mb-4 text-red-500">The Hidden Risk: iPhone Can Offload TikTok Automatically</h2>
+            <p className="text-gray-300 mb-4">
+              Many people never choose to offload anything — iPhone does it for them. If <strong>Settings → App Store → Offload Unused Apps</strong> is enabled, iOS automatically offloads apps you haven't opened recently when storage runs low. TikTok disappearing from your Home Screen (leaving only a cloud icon) is usually this feature, not a bug.
+            </p>
+            <p className="text-gray-300 mb-4">
+              The same drafts rule applies: automatic offload preserves app data in theory, so drafts typically survive the reinstall — but the only guaranteed protection is saving drafts to your camera roll before your phone makes the decision for you.
+            </p>
+            <p className="text-gray-300">
+              To disable it: Settings → App Store → toggle off "Offload Unused Apps". You'll keep full control over when (and whether) TikTok ever leaves your phone.
+            </p>
+          </section>
+
+          
+          <section className="mb-12">
             <h2 className="text-2xl font-bold mb-4 text-red-500">My Drafts Disappeared After Offloading — Can I Get Them Back?</h2>
             <p className="text-gray-300 mb-4">
               Unfortunately, there is no official recovery method. Because drafts have no server-side copy, once the local data is gone, the drafts are gone. TikTok support cannot restore them.
